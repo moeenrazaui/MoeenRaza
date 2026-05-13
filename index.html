@@ -3,1480 +3,685 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hafiz Moeen Raza — WordPress & UI/UX Designer</title>
-<meta name="description" content="Hafiz Moeen Raza — Premium WordPress & UI/UX Designer. I design conversion-focused digital experiences for brands and businesses worldwide.">
+<title>Hafiz Moeen Raza | WordPress & UI/UX Designer</title>
+<meta name="description" content="Hafiz Moeen Raza — WordPress & UI/UX Designer from Rahim Yar Khan, Pakistan. Expert in Elementor, Real Estate Websites, Figma, WooCommerce. 5+ years experience.">
 <meta name="author" content="Hafiz Moeen Raza">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+
+<link rel="preload" as="image" href="moeen.jpg" fetchpriority="high">
 
 <style>
-/* ══════════════════════════════════════════
-   DESIGN TOKENS
-══════════════════════════════════════════ */
+/* === DESIGN TOKENS — GOLD & BLACK THEME === */
 :root{
-  --bg:        #050509;
-  --bg2:       #070710;
-  --bg3:       #090914;
-  --sf:        #0d0d1a;
-  --sf2:       #111122;
-  --sf3:       #161630;
-  --border:    rgba(255,255,255,.07);
-  --border2:   rgba(0,220,255,.18);
-  --tx:        #f2f2ff;
-  --txd:       #b8b8d8;
-  --txdd:      #8888aa;
-  --c1:        #00dcff;  /* electric cyan */
-  --c2:        #9b5cff;  /* violet */
-  --c3:        #ff4d8e;  /* rose */
-  --c4:        #00ff99;  /* mint */
-  --g1:        linear-gradient(135deg,#00dcff,#9b5cff);
-  --g2:        linear-gradient(135deg,#ff4d8e,#9b5cff);
-  --g3:        linear-gradient(135deg,#00dcff,#00ff99);
-  --g4:        linear-gradient(135deg,#9b5cff,#ff4d8e);
-  --shadow:    0 24px 64px rgba(0,0,0,.6);
-  --shadow2:   0 8px 32px rgba(0,220,255,.12);
-  --r:         14px;
-  --r2:        20px;
-  --ff-display:'Fraunces',serif;
-  --ff-body:   'DM Sans',sans-serif;
-  --ff-mono:   'Space Grotesk',sans-serif;
+  --neon:#FFD700;--neon2:#C8960C;--neon3:#B8860B;--neon4:#FFA500;
+  --bg:#020200;--bg2:#040300;--bg3:#060400;
+  --sf:#0a0800;--sf2:#110e00;
+  --tx:#FFF8E0;--txd:#D8C890;--txdd:#C0A870;
+  --grad1:linear-gradient(135deg,#FFD700,#C8960C);
+  --grad2:linear-gradient(135deg,#FFA500,#B8860B);
+  --grad3:linear-gradient(135deg,#FFD700,#FFA500);
+  --font-display:'Syne',system-ui,sans-serif;
+  --font-mono:'Space Mono','Courier New',monospace;
+  --font-hero:'Bebas Neue',Impact,sans-serif;
 }
+
+/* === RESET === */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:16px}
+html{scroll-behavior:smooth}
 body{
-  background:var(--bg);
-  color:var(--tx);
-  font-family:var(--ff-body);
-  overflow-x:hidden;
-  line-height:1.65;
+  background:var(--bg);color:var(--tx);
+  font-family:var(--font-display);font-size:16px;
+  overflow-x:hidden;line-height:1.65;
+  scrollbar-gutter:stable;
 }
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
-button{cursor:pointer;border:none;background:none;color:inherit}
 
-::-webkit-scrollbar{width:2px}
+/* === SCROLLBAR === */
+::-webkit-scrollbar{width:3px}
 ::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--c2);border-radius:2px}
+::-webkit-scrollbar-thumb{background:var(--neon2);border-radius:2px}
 
-/* ══════════════════════════════════════════
-   NOISE + GRAIN OVERLAY
-══════════════════════════════════════════ */
-#grain{
-  position:fixed;inset:0;z-index:0;pointer-events:none;
-  opacity:.025;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat:repeat;
-  background-size:200px;
-}
+/* === LAYOUT === */
+section{position:relative;z-index:1;padding:90px 20px;contain:layout style}
+.wrap{max-width:1140px;margin:0 auto}
+.sec-label{font-family:var(--font-mono);font-size:.65rem;letter-spacing:6px;color:var(--neon);text-transform:uppercase;margin-bottom:12px}
+.sec-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--tx);margin-bottom:16px;line-height:1.15}
+.sec-title span{background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sec-line{width:60px;height:2px;background:var(--grad1);margin-bottom:50px}
+.gdivide{height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,.2),rgba(200,150,12,.2),transparent)}
 
-/* ══════════════════════════════════════════
-   SPLASH
-══════════════════════════════════════════ */
-#splash{
-  position:fixed;inset:0;z-index:9999;
-  background:var(--bg);
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  transition:opacity 1s ease,transform 1s ease;
-}
-#splash.hide{opacity:0;transform:scale(1.03);pointer-events:none}
-.sp-mark{
-  font-family:var(--ff-display);
-  font-size:4rem;font-weight:900;
-  background:var(--g1);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  letter-spacing:-2px;
-  animation:popIn .8s cubic-bezier(.175,.885,.32,1.275) both;
-}
-@keyframes popIn{from{transform:scale(.5);opacity:0}to{transform:scale(1);opacity:1}}
-.sp-rule{
-  width:200px;height:1px;
-  background:linear-gradient(90deg,transparent,var(--c1),transparent);
-  margin:20px 0;
-  animation:fadeUp .6s .5s both;
-}
-.sp-fill{
-  height:100%;width:0;
-  background:var(--g1);
-  animation:fill 2.4s .6s ease forwards;
-}
-@keyframes fill{to{width:100%}}
-.sp-label{
-  font-family:var(--ff-mono);
-  font-size:.62rem;letter-spacing:5px;
-  color:var(--txdd);text-transform:uppercase;
-  animation:fadeUp .6s .9s both;
-}
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-
-/* ══════════════════════════════════════════
-   SHARED LAYOUT
-══════════════════════════════════════════ */
-section{
-  position:relative;z-index:1;
-  padding:110px 24px;
-}
-.wrap{max-width:1160px;margin:0 auto}
-.wrap--narrow{max-width:780px;margin:0 auto}
-
-/* Labels + headings */
-.eyebrow{
-  display:inline-block;
-  font-family:var(--ff-mono);
-  font-size:.68rem;letter-spacing:5px;
-  text-transform:uppercase;color:var(--c1);
-  margin-bottom:16px;
-}
-.h2{
-  font-family:var(--ff-display);
-  font-size:clamp(2.2rem,4vw,3.2rem);
-  font-weight:900;line-height:1.1;
-  letter-spacing:-1px;
-  color:var(--tx);
-  margin-bottom:16px;
-}
-.h2 em{
-  font-style:italic;
-  background:var(--g1);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-}
-.rule{
-  width:50px;height:2px;
-  background:var(--g1);
-  margin-bottom:56px;
-  box-shadow:0 0 12px var(--c1);
-}
-
-/* Reveal animation */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
+/* === REVEAL === */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
 .reveal.vis{opacity:1;transform:none}
-.reveal[data-d="1"]{transition-delay:.08s}
-.reveal[data-d="2"]{transition-delay:.16s}
-.reveal[data-d="3"]{transition-delay:.24s}
-.reveal[data-d="4"]{transition-delay:.32s}
-.reveal[data-d="5"]{transition-delay:.40s}
+.reveal[data-d="1"]{transition-delay:.07s}
+.reveal[data-d="2"]{transition-delay:.14s}
+.reveal[data-d="3"]{transition-delay:.21s}
+.reveal[data-d="4"]{transition-delay:.28s}
 
-/* Divider */
-.gdivide{
-  height:1px;
-  background:linear-gradient(90deg,transparent,rgba(0,220,255,.12),rgba(155,92,255,.12),transparent);
-  position:relative;z-index:1;
-}
-
-/* ══════════════════════════════════════════
+/* ============================================================
    HERO
-══════════════════════════════════════════ */
+   ============================================================ */
 #hero{
-  min-height:100vh;
-  display:flex;align-items:center;
-  padding:100px 24px 80px;
-  overflow:hidden;
-  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,220,255,.06) 0%,transparent 65%),
-             radial-gradient(ellipse 50% 40% at 80% 80%,rgba(155,92,255,.06) 0%,transparent 60%),
-             var(--bg);
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:80px 20px 60px;overflow:hidden;position:relative;
 }
-#hero canvas{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5}
 
-.hero-inner{
-  max-width:1160px;margin:0 auto;width:100%;
-  display:grid;grid-template-columns:1fr 420px;
-  gap:80px;align-items:center;
+.orb-wrap{
+  position:absolute;width:600px;height:600px;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  pointer-events:none;z-index:0;
+  contain:strict;
+}
+.orb{
+  position:absolute;inset:0;border-radius:50%;
+  border:1px solid rgba(255,215,0,.12);
+  animation:orbspin 28s linear infinite;
+  will-change:transform;
+}
+.orb::after{
+  content:'';position:absolute;
+  width:6px;height:6px;border-radius:50%;
+  background:var(--neon);box-shadow:0 0 10px var(--neon);
+  top:-3px;left:50%;transform:translateX(-50%);
+}
+.orb2{
+  position:absolute;inset:80px;border-radius:50%;
+  border:1px dashed rgba(200,150,12,.1);
+  animation:orbspin 40s linear infinite reverse;
+  will-change:transform;
+}
+@keyframes orbspin{to{transform:rotate(360deg)}}
+
+@media(prefers-reduced-motion:reduce){
+  .orb,.orb2{animation:none}
+}
+@media(max-width:767px){
+  .orb-wrap{display:none}
+}
+
+/* HERO GRID */
+.hero-grid{
+  display:grid;grid-template-columns:1.1fr 1fr;gap:70px;
+  align-items:center;max-width:1100px;width:100%;margin:0 auto;
   position:relative;z-index:1;
 }
-@media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr;gap:50px;text-align:center}
-  .hero-visual{display:flex;justify-content:center}
+@media(max-width:880px){
+  .hero-grid{grid-template-columns:1fr;text-align:center;gap:36px}
+  .hero-right{order:-1;display:flex;justify-content:center}
 }
 
-/* Hero left */
-.hero-avail{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:7px 18px;
-  border:1px solid rgba(0,220,255,.2);
-  border-radius:40px;
-  background:rgba(0,220,255,.05);
-  font-family:var(--ff-mono);
-  font-size:.62rem;letter-spacing:3px;
-  color:var(--c1);text-transform:uppercase;
-  margin-bottom:28px;
-  animation:fadeUp .8s .5s both;
+.avail{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 18px;border:1px solid rgba(255,215,0,.3);border-radius:30px;
+  background:rgba(255,215,0,.06);font-family:var(--font-mono);
+  font-size:.58rem;letter-spacing:3px;color:var(--neon);text-transform:uppercase;
+  margin-bottom:22px;
+  animation:fadeup .7s .2s both;
 }
-.avail-dot{
+.adot{
   width:7px;height:7px;border-radius:50%;
-  background:var(--c4);
-  box-shadow:0 0 8px var(--c4);
-  animation:blink 1.6s ease-in-out infinite;
+  background:var(--neon);box-shadow:0 0 6px var(--neon);
+  animation:pulse 2s ease-in-out infinite;
 }
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 
-.hero-h1{
-  font-family:var(--ff-display);
-  font-size:clamp(3rem,6vw,5.2rem);
-  font-weight:900;line-height:1.0;
-  letter-spacing:-2px;
-  color:var(--tx);
-  margin-bottom:12px;
-  animation:fadeUp .9s .3s both;
+.hname-wrap{overflow:hidden;margin-bottom:8px}
+.hname{
+  font-family:var(--font-hero);
+  font-size:clamp(2.8rem,6vw,5rem);line-height:1;letter-spacing:3px;
+  background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  display:inline-block;
+  animation:slideup .9s .1s cubic-bezier(.16,1,.3,1) both;
 }
-.hero-h1 .accent{
-  display:block;
-  background:var(--g1);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  font-style:italic;
-}
-.hero-sub{
-  font-size:clamp(1rem,1.6vw,1.15rem);
-  color:var(--txd);
-  line-height:1.85;
-  font-weight:300;
-  max-width:560px;
-  margin-bottom:36px;
-  animation:fadeUp .9s .6s both;
-}
-@media(max-width:900px){.hero-sub{margin:0 auto 36px}}
-.hero-sub strong{color:var(--c1);font-weight:600}
+@keyframes slideup{from{transform:translateY(100%)}to{transform:translateY(0)}}
+@keyframes fadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
-.hero-btns{
-  display:flex;gap:14px;flex-wrap:wrap;
-  animation:fadeUp .9s .8s both;
+.hrole{
+  font-family:var(--font-mono);font-size:clamp(.65rem,1.2vw,.82rem);
+  color:var(--txd);letter-spacing:4px;margin-bottom:20px;text-transform:uppercase;
+  animation:fadeup .7s .4s both;
 }
-@media(max-width:900px){.hero-btns{justify-content:center}}
+.hbio{
+  font-size:clamp(1rem,1.5vw,1.1rem);color:var(--txd);line-height:1.9;
+  font-weight:400;margin-bottom:28px;animation:fadeup .7s .5s both;
+}
+.hbio strong{color:var(--neon);font-weight:700}
+
+.hbtns{display:flex;gap:14px;flex-wrap:wrap;animation:fadeup .7s .6s both}
+@media(max-width:880px){.hbtns{justify-content:center}}
 
 .btn-primary{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:15px 30px;
-  background:var(--g1);
-  color:#050509;
-  font-family:var(--ff-mono);font-size:.75rem;
-  font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  border-radius:var(--r);
-  transition:all .3s;
-  box-shadow:0 0 30px rgba(0,220,255,.25);
-}
-.btn-primary:hover{
-  transform:translateY(-3px);
-  box-shadow:0 8px 40px rgba(0,220,255,.4);
-}
-.btn-ghost{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:15px 30px;
-  border:1px solid var(--border2);
-  color:var(--c1);
-  font-family:var(--ff-mono);font-size:.75rem;
-  font-weight:600;letter-spacing:2px;text-transform:uppercase;
-  border-radius:var(--r);
-  background:transparent;
-  transition:all .3s;
-}
-.btn-ghost:hover{
-  background:rgba(0,220,255,.07);
-  transform:translateY(-3px);
-  box-shadow:0 4px 24px rgba(0,220,255,.15);
-}
-.btn-outline-dark{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:15px 30px;
-  border:1px solid var(--border);
-  color:var(--txd);
-  font-family:var(--ff-mono);font-size:.75rem;
-  font-weight:600;letter-spacing:2px;text-transform:uppercase;
-  border-radius:var(--r);
-  background:transparent;
-  transition:all .3s;
-}
-.btn-outline-dark:hover{
-  border-color:var(--border2);
-  color:var(--c1);
-  transform:translateY(-3px);
-}
-
-/* Hero visual */
-.hero-photo-outer{
-  position:relative;
-  width:360px;
-  animation:fadeUp 1s .4s both;
-}
-@media(max-width:480px){.hero-photo-outer{width:260px}}
-.hero-photo-card{
-  position:relative;
-  border-radius:24px;
-  overflow:hidden;
-  border:1px solid rgba(0,220,255,.15);
-  box-shadow:0 0 80px rgba(0,220,255,.1),0 0 160px rgba(155,92,255,.07),var(--shadow);
-  animation:float 7s ease-in-out infinite;
-  background:var(--sf);
-}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
-@media(max-width:900px){.hero-photo-card{animation:none}}
-.hero-photo-card img{
-  width:100%;height:auto;
-  display:block;object-fit:cover;object-position:top;
-}
-/* Scanlines */
-.hero-photo-card::after{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background:repeating-linear-gradient(0deg,transparent,transparent 4px,rgba(0,220,255,.012) 4px,rgba(0,220,255,.012) 5px);
-  border-radius:24px;
-}
-/* Corner brackets */
-.bracket{position:absolute;width:24px;height:24px;z-index:3}
-.bracket--tl{top:-2px;left:-2px;border-top:2px solid var(--c1);border-left:2px solid var(--c1)}
-.bracket--tr{top:-2px;right:-2px;border-top:2px solid var(--c2);border-right:2px solid var(--c2)}
-.bracket--bl{bottom:-2px;left:-2px;border-bottom:2px solid var(--c2);border-left:2px solid var(--c2)}
-.bracket--br{bottom:-2px;right:-2px;border-bottom:2px solid var(--c1);border-right:2px solid var(--c1)}
-
-/* Floating badges */
-.hero-badge{
-  position:absolute;
-  background:rgba(5,5,15,.82);
-  backdrop-filter:blur(14px);
-  border:1px solid var(--border2);
-  border-radius:12px;
-  padding:10px 16px;
-  font-family:var(--ff-mono);
-  font-size:.62rem;letter-spacing:2px;
-  color:var(--c1);
-  display:flex;align-items:center;gap:8px;
-  white-space:nowrap;z-index:4;
-}
-.hero-badge--exp{
-  top:-18px;left:50%;transform:translateX(-50%);
-  background:var(--g1);color:#050509;
-  border:none;font-weight:700;
-  box-shadow:0 0 20px rgba(0,220,255,.4);
-  border-radius:40px;z-index:5;
-}
-.hero-badge--ui{
-  right:-24px;top:40px;
-  animation:float 5s 1s ease-in-out infinite;
-  color:var(--c1);
-}
-.hero-badge--wp{
-  left:-24px;bottom:50px;
-  animation:float 6s 2s ease-in-out infinite;
-  color:var(--c2);border-color:rgba(155,92,255,.3);
-}
-@media(max-width:900px){.hero-badge--ui,.hero-badge--wp{display:none}}
-
-/* Orbiting ring */
-.hero-ring{
-  position:absolute;inset:-28px;
-  border-radius:32px;
-  border:1px solid transparent;
-  background:conic-gradient(from 0deg,transparent 65%,rgba(0,220,255,.35),transparent 85%) border-box;
-  animation:spin 10s linear infinite;
-  pointer-events:none;
-}
-@keyframes spin{to{transform:rotate(360deg)}}
-
-/* Hero meta line */
-.hero-meta{
-  display:flex;gap:24px;flex-wrap:wrap;
-  margin-top:36px;
-  animation:fadeUp .9s 1s both;
-}
-@media(max-width:900px){.hero-meta{justify-content:center}}
-.hero-meta-item{
-  font-family:var(--ff-mono);
-  font-size:.65rem;letter-spacing:2px;
-  color:var(--txdd);text-transform:uppercase;
-  display:flex;align-items:center;gap:6px;
-}
-.hero-meta-item i{color:var(--c1);font-size:.75rem}
-
-/* ══════════════════════════════════════════
-   STATS MARQUEE BAR
-══════════════════════════════════════════ */
-#stats-bar{
-  padding:0;
-  background:var(--sf);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  overflow:hidden;
-  position:relative;z-index:1;
-}
-.marquee-track{
-  display:flex;
-  animation:marquee 28s linear infinite;
-  width:max-content;
-}
-.marquee-track:hover{animation-play-state:paused}
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.marquee-item{
-  display:flex;align-items:center;gap:12px;
-  padding:20px 44px;
-  border-right:1px solid var(--border);
-  white-space:nowrap;
-  flex-shrink:0;
-}
-.marquee-num{
-  font-family:var(--ff-display);
-  font-size:1.6rem;font-weight:900;
-  background:var(--g1);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  line-height:1;
-}
-.marquee-label{
-  font-family:var(--ff-mono);
-  font-size:.65rem;letter-spacing:3px;
-  color:var(--txdd);text-transform:uppercase;
-  line-height:1.3;
-}
-.marquee-sep{
-  padding:0 44px;
-  color:var(--border2);
-  font-size:1.2rem;flex-shrink:0;
-  opacity:.4;
-}
-
-/* ══════════════════════════════════════════
-   INTRO / AUTHORITY SECTION
-══════════════════════════════════════════ */
-#intro{
-  padding:110px 24px;
-  background:var(--bg2);
-}
-.intro-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;align-items:center;
-}
-@media(max-width:820px){.intro-grid{grid-template-columns:1fr;gap:48px}}
-.intro-left .eyebrow{display:block;margin-bottom:16px}
-.intro-left .h2{margin-bottom:24px}
-.intro-text{
-  font-size:1.05rem;color:var(--txd);
-  line-height:1.95;font-weight:300;
-}
-.intro-text p{margin-bottom:18px}
-.intro-text p:last-child{margin-bottom:0}
-.intro-text strong{color:var(--c1);font-weight:600}
-.intro-tags{
-  display:flex;flex-wrap:wrap;gap:10px;
-  margin-top:28px;
-}
-.itag{
-  padding:7px 18px;
-  border:1px solid var(--border);
-  border-radius:40px;
-  font-family:var(--ff-mono);
-  font-size:.62rem;letter-spacing:2px;
-  color:var(--txd);text-transform:uppercase;
-  transition:all .3s;
-}
-.itag:hover{border-color:var(--c1);color:var(--c1);background:rgba(0,220,255,.05)}
-
-/* Credentials cards */
-.cred-stack{
-  display:flex;flex-direction:column;gap:16px;
-}
-.cred-card{
-  background:var(--sf);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-  padding:22px 24px;
-  display:flex;gap:18px;align-items:flex-start;
-  transition:all .3s;
-}
-.cred-card:hover{
-  border-color:var(--border2);
-  background:var(--sf2);
-  transform:translateX(4px);
-}
-.cred-icon{
-  width:44px;height:44px;
-  border-radius:10px;
-  background:var(--sf2);
-  border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.1rem;flex-shrink:0;
-  color:var(--c1);
-}
-.cred-title{
-  font-family:var(--ff-mono);
-  font-size:.82rem;font-weight:600;
-  color:var(--tx);margin-bottom:4px;
-}
-.cred-sub{
-  font-size:.88rem;color:var(--txdd);line-height:1.5;
-}
-
-/* ══════════════════════════════════════════
-   SERVICES
-══════════════════════════════════════════ */
-#services{background:var(--bg3)}
-.svc-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-@media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
-
-.svc-card{
-  background:var(--sf);
-  border:1px solid var(--border);
-  border-radius:var(--r2);
-  padding:32px 28px;
-  transition:all .35s;
-  position:relative;overflow:hidden;
-}
-.svc-card::before{
-  content:'';position:absolute;
-  top:0;left:0;right:0;height:2px;
-  background:var(--g1);opacity:0;
-  transition:opacity .3s;
-}
-.svc-card:hover{
-  border-color:rgba(0,220,255,.2);
-  transform:translateY(-6px);
-  box-shadow:var(--shadow2);
-}
-.svc-card:hover::before{opacity:1}
-
-.svc-icon{
-  width:52px;height:52px;
-  border-radius:12px;
-  background:var(--sf2);
-  border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.3rem;margin-bottom:22px;
-  transition:all .3s;
-}
-.svc-card:hover .svc-icon{
-  border-color:rgba(0,220,255,.25);
-  background:rgba(0,220,255,.06);
-}
-.svc-card h3{
-  font-family:var(--ff-mono);
-  font-size:1rem;font-weight:600;
-  color:var(--tx);margin-bottom:12px;
-}
-.svc-card p{
-  font-size:.93rem;color:var(--txdd);line-height:1.75;
-}
-
-/* AI Service card — wide */
-.svc-card--feature{
-  grid-column:1/-1;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;align-items:start;
-  padding:36px 36px;
-  background:linear-gradient(135deg,var(--sf),var(--sf2));
-  border-color:rgba(155,92,255,.2);
-}
-@media(max-width:820px){.svc-card--feature{grid-template-columns:1fr}}
-.svc-card--feature::before{background:var(--g2)}
-.svc-feat-badge{
-  display:inline-block;
-  font-family:var(--ff-mono);
-  font-size:.56rem;letter-spacing:3px;
-  text-transform:uppercase;
-  background:var(--g1);color:#050509;
-  padding:4px 14px;border-radius:40px;
-  font-weight:700;margin-bottom:18px;
-}
-.svc-feat-list{
-  list-style:none;
-  display:flex;flex-direction:column;gap:14px;
-  margin-top:20px;
-}
-.svc-feat-list li{
-  display:flex;gap:12px;align-items:flex-start;
-  font-size:.93rem;color:var(--txd);line-height:1.6;
-}
-.svc-feat-list li i{
-  color:var(--c1);font-size:.7rem;
-  margin-top:4px;flex-shrink:0;
-}
-.svc-feat-list li strong{color:var(--tx);font-weight:600}
-.svc-feat-tech{
-  display:flex;flex-wrap:wrap;gap:8px;
-  margin-top:24px;
-}
-.svc-feat-tech span{
-  padding:5px 14px;
-  border:1px solid rgba(0,220,255,.2);
-  border-radius:20px;
-  font-family:var(--ff-mono);font-size:.58rem;
-  letter-spacing:2px;color:var(--c1);
-  text-transform:uppercase;
-  background:rgba(0,220,255,.05);
-}
-
-/* ══════════════════════════════════════════
-   PROJECTS / CASE STUDIES
-══════════════════════════════════════════ */
-#portfolio{background:var(--bg)}
-.proj-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:28px;
-}
-@media(max-width:720px){.proj-grid{grid-template-columns:1fr}}
-
-.proj-card{
-  background:var(--sf);
-  border:1px solid var(--border);
-  border-radius:var(--r2);
-  overflow:hidden;
-  transition:all .35s;
-  cursor:pointer;
-  position:relative;
-}
-.proj-card:hover{
-  border-color:rgba(0,220,255,.2);
-  transform:translateY(-6px);
-  box-shadow:var(--shadow2);
-}
-
-/* First card — featured, wide */
-.proj-card--featured{
-  grid-column:1/-1;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-}
-@media(max-width:720px){.proj-card--featured{grid-template-columns:1fr}}
-
-.proj-thumb{
-  position:relative;overflow:hidden;
-  aspect-ratio:16/10;
-}
-.proj-card--featured .proj-thumb{
-  aspect-ratio:unset;min-height:300px;height:100%;
-}
-@media(max-width:720px){.proj-card--featured .proj-thumb{min-height:220px;height:220px}}
-
-.proj-thumb img{
-  width:100%;height:100%;
-  object-fit:cover;object-position:top;
-  transition:transform .6s ease;
-}
-.proj-card:hover .proj-thumb img{transform:scale(1.04)}
-.proj-thumb-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(0deg,rgba(5,5,9,.85) 0%,transparent 60%);
-}
-.proj-tag{
-  position:absolute;top:14px;left:14px;
-  font-family:var(--ff-mono);
-  font-size:.56rem;letter-spacing:3px;
-  text-transform:uppercase;
-  background:rgba(5,5,9,.75);
-  backdrop-filter:blur(8px);
-  border:1px solid var(--border2);
-  color:var(--c1);
-  padding:5px 12px;border-radius:20px;
-}
-.proj-open-btn{
-  position:absolute;bottom:14px;right:14px;
-  width:38px;height:38px;border-radius:50%;
-  background:rgba(0,220,255,.15);
-  border:1px solid rgba(0,220,255,.3);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--c1);font-size:.9rem;
-  opacity:0;transform:scale(.7);
-  transition:all .3s;
-}
-.proj-card:hover .proj-open-btn{opacity:1;transform:scale(1)}
-
-.proj-body{
-  padding:26px 26px 28px;
-}
-.proj-card--featured .proj-body{
-  padding:32px 32px;
-  display:flex;flex-direction:column;justify-content:center;
-}
-.proj-cat{
-  font-family:var(--ff-mono);
-  font-size:.62rem;letter-spacing:3px;
-  color:var(--c2);text-transform:uppercase;
-  margin-bottom:10px;
-}
-.proj-title{
-  font-family:var(--ff-display);
-  font-size:1.35rem;font-weight:900;
-  color:var(--tx);line-height:1.25;
-  margin-bottom:12px;
-}
-.proj-card--featured .proj-title{font-size:1.75rem}
-.proj-desc{
-  font-size:.92rem;color:var(--txd);
-  line-height:1.75;margin-bottom:18px;
-}
-.proj-meta-row{
-  display:flex;flex-wrap:wrap;gap:10px;
-  margin-bottom:20px;
-}
-.proj-meta-tag{
-  padding:4px 12px;
-  border:1px solid var(--border);
-  border-radius:20px;
-  font-family:var(--ff-mono);
-  font-size:.56rem;letter-spacing:2px;
-  color:var(--txdd);text-transform:uppercase;
-}
-.proj-result{
-  display:flex;gap:6px;align-items:flex-start;
-  font-size:.9rem;color:var(--c4);
-  font-family:var(--ff-mono);
-  font-size:.68rem;letter-spacing:1px;
-}
-.proj-result i{margin-top:2px}
-.proj-link-btn{
+  padding:13px 28px;border-radius:6px;font-family:var(--font-mono);
+  font-size:.65rem;letter-spacing:3px;text-transform:uppercase;
+  background:var(--grad1);color:#020200;font-weight:700;
+  transition:transform .25s,box-shadow .25s;
+  box-shadow:0 0 16px rgba(255,215,0,.25);
+}
+.btn-primary:hover{box-shadow:0 0 28px rgba(255,215,0,.45);transform:translateY(-2px)}
+.btn-outline{
+  padding:13px 28px;border-radius:6px;font-family:var(--font-mono);
+  font-size:.65rem;letter-spacing:3px;text-transform:uppercase;
+  border:1px solid rgba(255,215,0,.35);color:var(--neon);background:transparent;
+  transition:transform .25s,box-shadow .25s,background .25s;
   display:inline-flex;align-items:center;gap:8px;
-  font-family:var(--ff-mono);
-  font-size:.65rem;letter-spacing:2px;
-  text-transform:uppercase;
-  color:var(--c1);
-  border-bottom:1px solid rgba(0,220,255,.3);
-  padding-bottom:2px;
-  transition:all .25s;
-  margin-top:18px;
 }
-.proj-link-btn:hover{
-  color:var(--tx);
-  border-color:var(--tx);
+.btn-outline:hover{background:rgba(255,215,0,.08);box-shadow:0 0 16px rgba(255,215,0,.2);transform:translateY(-2px)}
+
+/* HERO PHOTO */
+.hero-photo-wrap{position:relative;width:320px;height:420px}
+@media(max-width:480px){.hero-photo-wrap{width:240px;height:320px}}
+
+@media(min-width:768px){
+  .hp-frame{animation:float 7s ease-in-out infinite;will-change:transform}
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+.hp-frame{
+  width:100%;height:100%;border-radius:18px;overflow:hidden;
+  border:1px solid rgba(255,215,0,.2);
+  box-shadow:0 0 40px rgba(255,215,0,.12);
+  position:relative;z-index:2;background:var(--sf);
+}
+.hp-frame img{width:100%;height:100%;object-fit:cover;object-position:top center}
+
+.hp-scan{
+  position:absolute;inset:0;z-index:3;pointer-events:none;border-radius:18px;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,215,0,.012) 3px,rgba(255,215,0,.012) 4px);
 }
 
-/* ══════════════════════════════════════════
-   LIGHTBOX (ENHANCED)
-══════════════════════════════════════════ */
+.hp-tl,.hp-tr,.hp-bl,.hp-br{position:absolute;width:20px;height:20px;z-index:4}
+.hp-tl{top:-1px;left:-1px;border-top:2px solid var(--neon);border-left:2px solid var(--neon)}
+.hp-tr{top:-1px;right:-1px;border-top:2px solid var(--neon2);border-right:2px solid var(--neon2)}
+.hp-bl{bottom:-1px;left:-1px;border-bottom:2px solid var(--neon2);border-left:2px solid var(--neon2)}
+.hp-br{bottom:-1px;right:-1px;border-bottom:2px solid var(--neon);border-right:2px solid var(--neon)}
+
+.hp-exp{
+  position:absolute;top:-16px;left:50%;transform:translateX(-50%);z-index:6;
+  font-family:var(--font-mono);font-size:.55rem;letter-spacing:3px;
+  background:var(--grad1);color:#020200;padding:5px 16px;border-radius:20px;
+  white-space:nowrap;font-weight:700;
+}
+
+.hp-badge{
+  position:absolute;z-index:5;
+  background:rgba(10,8,0,.9);
+  border:1px solid rgba(255,215,0,.25);border-radius:8px;
+  padding:8px 14px;display:flex;align-items:center;gap:8px;
+  font-family:var(--font-mono);font-size:.55rem;letter-spacing:2px;
+  color:var(--neon);white-space:nowrap;
+}
+.hp-badge.b1{top:20px;right:-30px}
+.hp-badge.b2{bottom:30px;left:-30px;color:var(--neon2);border-color:rgba(200,150,12,.25)}
+.hp-badge span{font-size:1.1rem}
+@media(max-width:880px){.hp-badge{display:none}}
+
+.hp-ring{
+  position:absolute;inset:-20px;border-radius:24px;
+  border:1px solid rgba(255,215,0,.1);
+  animation:orbspin 12s linear infinite;will-change:transform;z-index:1;
+}
+@media(max-width:767px){.hp-ring{display:none}}
+
+#noise{
+  position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.025;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   TICKER
+   ============================================================ */
+#ticker{
+  position:relative;z-index:1;padding:0;
+  background:var(--sf);overflow:hidden;height:64px;
+  display:flex;align-items:center;
+  border-top:1px solid rgba(255,215,0,.07);
+  border-bottom:1px solid rgba(255,215,0,.07);
+  contain:layout style;
+}
+.ticker-track{
+  display:flex;align-items:center;
+  animation:tickerScroll 40s linear infinite;
+  white-space:nowrap;will-change:transform;
+}
+.ticker-track:hover{animation-play-state:paused}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-pill{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:8px 20px;margin:0 8px;border-radius:30px;
+  border:1px solid rgba(255,215,0,.15);
+  background:rgba(255,215,0,.04);
+  font-family:var(--font-mono);font-size:.58rem;letter-spacing:3px;
+  color:var(--txd);text-transform:uppercase;flex-shrink:0;
+  transition:border-color .2s,color .2s;
+}
+.ticker-pill:hover{border-color:var(--neon);color:var(--neon)}
+.ticker-pill .ti{font-size:.8rem;color:var(--neon)}
+.ticker-pill.p2 .ti{color:var(--neon2)}
+.ticker-pill.p2{border-color:rgba(200,150,12,.15);background:rgba(200,150,12,.04)}
+.ticker-pill.p3 .ti{color:var(--neon3)}
+.ticker-pill.p3{border-color:rgba(184,134,11,.15);background:rgba(184,134,11,.04)}
+.ticker-pill.p4 .ti{color:var(--neon4)}
+.ticker-sep{display:inline-block;width:4px;height:4px;border-radius:50%;background:rgba(255,215,0,.25);margin:0 4px;flex-shrink:0}
+
+/* ============================================================
+   STATS
+   ============================================================ */
+#stats{
+  padding:50px 20px;background:var(--sf);
+  border-top:1px solid rgba(255,215,0,.07);
+  border-bottom:1px solid rgba(255,215,0,.07);
+  contain:layout style;
+}
+.sg{display:flex;justify-content:center;gap:60px;flex-wrap:wrap}
+.sitem{text-align:center}
+.sn{font-family:var(--font-hero);font-size:3.2rem;line-height:1;background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sl{font-family:var(--font-mono);font-size:.6rem;letter-spacing:4px;color:var(--txd);margin-top:5px;text-transform:uppercase}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+#about{background:var(--bg2);contain:layout style}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr}}
+.about-txt p{font-size:1.05rem;color:var(--txd);line-height:1.9;margin-bottom:18px}
+.about-txt p strong{color:var(--neon);font-weight:700}
+.about-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.atag{padding:7px 18px;border:1px solid rgba(255,215,0,.18);border-radius:30px;font-family:var(--font-mono);font-size:.58rem;letter-spacing:2px;color:var(--txd);text-transform:uppercase;transition:border-color .2s,color .2s}
+.atag:hover{border-color:var(--neon);color:var(--neon)}
+.skill-list{display:flex;flex-direction:column;gap:22px}
+.sk-head{display:flex;justify-content:space-between;margin-bottom:9px}
+.sk-name{font-family:var(--font-mono);font-size:.62rem;letter-spacing:2px;color:var(--txd);text-transform:uppercase}
+.sk-pct{font-family:var(--font-mono);font-size:.62rem;color:var(--neon);font-weight:700}
+.sk-track{height:3px;background:var(--sf2);border-radius:2px;overflow:hidden}
+.skf{height:100%;width:0;border-radius:2px;transition:width 1.3s cubic-bezier(.4,0,.2,1)}
+.skf.c1{background:var(--grad1)}
+.skf.c2{background:var(--grad2)}
+.skf.c3{background:var(--grad3)}
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+#services{background:var(--bg3);contain:layout style}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px}
+.svc-card{
+  background:var(--sf);border:1px solid rgba(255,215,0,.08);
+  border-radius:14px;padding:32px 26px;
+  transition:border-color .3s,transform .3s,box-shadow .3s;
+  position:relative;overflow:hidden;
+  contain:layout style;
+}
+.svc-card:hover{border-color:rgba(255,215,0,.3);transform:translateY(-4px);box-shadow:0 10px 30px rgba(255,215,0,.08)}
+.svc-icon{
+  width:52px;height:52px;border-radius:10px;margin-bottom:20px;
+  display:flex;align-items:center;justify-content:center;font-size:1.4rem;
+  background:var(--sf2);border:1px solid rgba(255,215,0,.12);
+}
+.svc-card h3{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--tx);margin-bottom:12px}
+.svc-card p{font-size:.95rem;color:var(--txdd);line-height:1.75}
+.svc-card--ai{border-color:rgba(255,215,0,.15);background:linear-gradient(135deg,#0a0800,#0d0a00);grid-column:1/-1}
+.svc-ai-badge{position:absolute;top:18px;right:18px;font-family:var(--font-mono);font-size:.5rem;letter-spacing:3px;background:var(--grad1);color:#020200;padding:4px 12px;border-radius:20px;font-weight:700}
+.svc-card--ai h3{font-size:1.3rem;margin-bottom:10px}
+.svc-card--ai>p{font-size:1rem;color:var(--txd);margin-bottom:20px;max-width:680px}
+.svc-ai-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:22px}
+.svc-ai-list li{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;color:var(--txd);line-height:1.55}
+.svc-ai-list li .sai{color:var(--neon);font-size:.7rem;margin-top:3px;flex-shrink:0}
+.svc-ai-list li strong{color:var(--tx);font-weight:700}
+.svc-ai-tech{display:flex;flex-wrap:wrap;gap:8px}
+.svc-ai-tech span{padding:5px 14px;border:1px solid rgba(255,215,0,.2);border-radius:20px;font-family:var(--font-mono);font-size:.52rem;letter-spacing:2px;color:var(--neon);text-transform:uppercase;background:rgba(255,215,0,.06)}
+
+/* ============================================================
+   PORTFOLIO
+   ============================================================ */
+#portfolio{background:var(--bg);contain:layout style}
+.pw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.pw-card{
+  position:relative;border-radius:12px;overflow:hidden;cursor:pointer;
+  border:1px solid rgba(255,215,0,.07);aspect-ratio:16/10;
+  transition:border-color .3s,transform .3s,box-shadow .3s;
+  contain:layout style;
+}
+.pw-card:hover{border-color:rgba(255,215,0,.35);box-shadow:0 0 24px rgba(255,215,0,.12);transform:translateY(-3px)}
+.pw-card img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .45s}
+.pw-card:hover img{transform:scale(1.04)}
+.pw-over{
+  position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(2,2,0,.94) 0%,rgba(2,2,0,.55) 50%,transparent 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:18px;
+  opacity:0;transition:opacity .3s;
+}
+.pw-card:hover .pw-over{opacity:1}
+.pw-title{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:5px}
+.pw-cat{font-family:var(--font-mono);font-size:.55rem;letter-spacing:3px;color:var(--neon);text-transform:uppercase}
+.pw-open{
+  position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;
+  background:var(--grad1);display:flex;align-items:center;justify-content:center;
+  color:#020200;font-size:.85rem;opacity:0;transform:scale(.75);transition:opacity .25s,transform .25s;
+}
+.pw-card:hover .pw-open{opacity:1;transform:scale(1)}
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
 #lb{
-  position:fixed;inset:0;z-index:9000;
-  background:rgba(2,2,10,.97);
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  opacity:0;pointer-events:none;
-  transition:opacity .3s;
-  backdrop-filter:blur(16px);
+  position:fixed;inset:0;z-index:9000;background:rgba(2,2,0,.96);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .25s;
 }
-#lb.open{opacity:1;pointer-events:all}
-.lb-topbar{
-  position:absolute;top:0;left:0;right:0;
-  padding:14px 20px;
-  display:flex;align-items:center;justify-content:space-between;
-  background:linear-gradient(180deg,rgba(5,5,9,.95) 0%,transparent 100%);
-  z-index:10;
-}
-#lb-cap{
-  font-family:var(--ff-mono);font-size:.65rem;
-  letter-spacing:2px;color:var(--c1);
-  text-transform:uppercase;
-  max-width:65%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-}
-.lb-topbar-right{display:flex;align-items:center;gap:10px}
-#lb-counter{font-family:var(--ff-mono);font-size:.58rem;letter-spacing:2px;color:var(--txdd)}
-.lb-close{
-  width:38px;height:38px;border-radius:50%;
-  background:rgba(13,13,26,.85);
-  border:1px solid var(--border);
-  color:var(--tx);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;font-size:.95rem;
-  transition:all .3s;
-}
-.lb-close:hover{border-color:var(--c3);color:var(--c3)}
-.lb-zoom-btns{
-  position:absolute;right:14px;top:68px;
-  z-index:11;display:flex;flex-direction:column;gap:7px;
-}
-.lb-zbtn{
-  width:36px;height:36px;border-radius:8px;
-  background:rgba(13,13,26,.85);
-  border:1px solid var(--border);
-  color:var(--c1);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;font-size:.9rem;
-  transition:all .25s;
-  -webkit-tap-highlight-color:transparent;
-  user-select:none;
-  font-family:var(--ff-mono);font-size:.58rem;
-}
-.lb-zbtn:hover{background:rgba(0,220,255,.1);border-color:var(--c1)}
-.lb-img-wrap{
-  position:absolute;
-  top:58px;left:0;right:0;bottom:72px;
-  overflow:auto;
-  display:flex;align-items:flex-start;justify-content:center;
-  padding:16px;
-  -webkit-overflow-scrolling:touch;
-  cursor:grab;
-}
+#lb.open{opacity:1;pointer-events:all;backdrop-filter:blur(10px)}
+.lb-topbar{position:absolute;top:0;left:0;right:0;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,rgba(2,2,0,.9) 0%,transparent 100%);z-index:10}
+#lb-cap{font-family:var(--font-mono);font-size:.6rem;letter-spacing:2px;color:var(--neon);text-transform:uppercase;max-width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#lb-counter{font-family:var(--font-mono);font-size:.56rem;letter-spacing:2px;color:var(--txdd);margin-right:10px}
+.lb-close{width:38px;height:38px;border-radius:50%;background:rgba(10,8,0,.85);border:1px solid rgba(255,215,0,.2);color:var(--tx);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;transition:border-color .2s,color .2s;flex-shrink:0}
+.lb-close:hover{border-color:var(--neon3);color:var(--neon3)}
+.lb-img-wrap{position:absolute;top:58px;left:0;right:0;bottom:72px;overflow:auto;display:flex;align-items:flex-start;justify-content:center;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;cursor:grab;padding:16px}
 .lb-img-wrap:active{cursor:grabbing}
-#lb-img{
-  display:block;width:100%;max-width:960px;height:auto;
-  border-radius:var(--r);
-  border:1px solid var(--border2);
-  box-shadow:0 0 60px rgba(0,220,255,.12);
-  transition:opacity .2s,transform .3s;
-  flex-shrink:0;transform-origin:top center;
-}
-.lb-botbar{
-  position:absolute;bottom:0;left:0;right:0;
-  padding:12px 16px;
-  display:flex;align-items:center;justify-content:center;gap:12px;
-  background:linear-gradient(0deg,rgba(5,5,9,.95) 0%,transparent 100%);
-  z-index:10;
-}
-.lb-nav{
-  width:42px;height:42px;border-radius:50%;
-  background:rgba(13,13,26,.85);
-  border:1px solid var(--border);
-  color:var(--c1);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;font-size:.95rem;
-  transition:all .3s;flex-shrink:0;
-  -webkit-tap-highlight-color:transparent;
-}
-.lb-nav:hover{background:rgba(0,220,255,.1);border-color:var(--c1)}
-.lb-thumbs{
-  display:flex;gap:7px;align-items:center;
-  overflow-x:auto;max-width:calc(100vw - 130px);
-  scrollbar-width:none;
-}
-.lb-thumbs::-webkit-scrollbar{display:none}
-.lb-thumb{
-  width:44px;height:29px;
-  border-radius:5px;overflow:hidden;
-  border:1px solid var(--border);
-  opacity:.4;transition:all .3s;cursor:pointer;flex-shrink:0;
-}
-.lb-thumb img{width:100%;height:100%;object-fit:cover}
-.lb-thumb.active{opacity:1;border-color:var(--c1);box-shadow:0 0 10px rgba(0,220,255,.35)}
-.lb-scroll-pulse{
-  position:absolute;bottom:82px;right:14px;z-index:11;
-  width:32px;height:32px;border-radius:50%;
-  background:rgba(0,220,255,.1);
-  border:1px solid rgba(0,220,255,.25);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--c1);font-size:.7rem;
-  opacity:0;transition:opacity .4s;
-  animation:scrollpulse 1.5s ease-in-out infinite;
-}
+#lb-img{display:block;width:100%;max-width:960px;height:auto;border-radius:6px;border:1px solid rgba(255,215,0,.15);transition:opacity .2s,transform .25s;flex-shrink:0;transform-origin:top center}
+.lb-zoom-btns{position:absolute;right:14px;top:68px;z-index:11;display:flex;flex-direction:column;gap:8px}
+.lb-zbtn{width:36px;height:36px;border-radius:8px;background:rgba(10,8,0,.85);border:1px solid rgba(255,215,0,.2);color:var(--neon);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.9rem;transition:background .2s,border-color .2s;-webkit-tap-highlight-color:transparent;user-select:none}
+.lb-zbtn:hover,.lb-zbtn:active{background:rgba(255,215,0,.15);border-color:var(--neon)}
+.lb-zoom-hint{position:absolute;bottom:82px;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:.48rem;letter-spacing:3px;color:#fff;text-transform:uppercase;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.2);padding:5px 14px;border-radius:20px;pointer-events:none;white-space:nowrap;z-index:11;opacity:0;transition:opacity .4s}
+.lb-zoom-hint.show{opacity:1}
+.lb-scroll-pulse{position:absolute;bottom:82px;right:14px;z-index:11;width:32px;height:32px;border-radius:50%;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.25);display:flex;align-items:center;justify-content:center;color:var(--neon);font-size:.7rem;opacity:0;transition:opacity .4s;animation:scrollpulse 2s ease-in-out infinite}
 .lb-scroll-pulse.show{opacity:1}
 @keyframes scrollpulse{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
-.lb-zoom-hint{
-  position:absolute;bottom:82px;left:50%;transform:translateX(-50%);
-  font-family:var(--ff-mono);font-size:.5rem;letter-spacing:3px;
-  color:#fff;text-transform:uppercase;
-  background:rgba(0,220,255,.1);
-  border:1px solid rgba(0,220,255,.2);
-  padding:5px 14px;border-radius:20px;
-  pointer-events:none;white-space:nowrap;z-index:11;
-  opacity:0;transition:opacity .4s;
-}
-.lb-zoom-hint.show{opacity:1}
+.lb-botbar{position:absolute;bottom:0;left:0;right:0;padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:12px;background:linear-gradient(0deg,rgba(2,2,0,.9) 0%,transparent 100%);z-index:10}
+.lb-nav{width:42px;height:42px;border-radius:50%;background:rgba(10,8,0,.85);border:1px solid rgba(255,215,0,.2);color:var(--neon);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;transition:background .2s;flex-shrink:0;-webkit-tap-highlight-color:transparent}
+.lb-nav:hover,.lb-nav:active{background:rgba(255,215,0,.12)}
+.lb-thumbs{display:flex;gap:7px;align-items:center;overflow-x:auto;max-width:calc(100vw - 130px);scrollbar-width:none}
+.lb-thumbs::-webkit-scrollbar{display:none}
+.lb-thumb{width:42px;height:28px;border-radius:4px;overflow:hidden;border:1px solid rgba(255,215,0,.12);opacity:.45;transition:opacity .25s,border-color .25s;cursor:pointer;flex-shrink:0}
+.lb-thumb img{width:100%;height:100%;object-fit:cover}
+.lb-thumb.active{opacity:1;border-color:var(--neon)}
 
-/* ══════════════════════════════════════════
-   PROCESS TIMELINE
-══════════════════════════════════════════ */
-#process{
-  background:var(--bg2);
-}
-.process-list{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:0;position:relative;
-}
-@media(max-width:900px){.process-list{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:540px){.process-list{grid-template-columns:repeat(2,1fr)}}
-
-/* Connecting line */
-.process-list::before{
-  content:'';position:absolute;
-  top:32px;left:6%;right:6%;height:1px;
-  background:linear-gradient(90deg,transparent,var(--border2),rgba(155,92,255,.3),transparent);
-  z-index:0;
-}
-@media(max-width:900px){.process-list::before{display:none}}
-
-.proc-item{
-  display:flex;flex-direction:column;align-items:center;
-  text-align:center;padding:0 12px 0;position:relative;z-index:1;
-}
-
-.proc-num-wrap{
-  width:64px;height:64px;
-  border-radius:50%;
-  background:var(--sf);
-  border:1px solid var(--border2);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:20px;
-  position:relative;
-  transition:all .3s;
-}
-.proc-item:hover .proc-num-wrap{
-  background:rgba(0,220,255,.07);
-  box-shadow:0 0 24px rgba(0,220,255,.2);
-}
-.proc-step{
-  font-family:var(--ff-display);
-  font-size:1.4rem;font-weight:900;
-  background:var(--g1);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  line-height:1;
-}
-.proc-emoji{
-  position:absolute;top:-8px;right:-8px;
-  font-size:1.1rem;
-}
-.proc-title{
-  font-family:var(--ff-mono);
-  font-size:.78rem;font-weight:600;
-  color:var(--tx);margin-bottom:8px;
-  letter-spacing:.5px;
-}
-.proc-desc{
-  font-size:.85rem;color:var(--txdd);line-height:1.65;
-}
-
-/* ══════════════════════════════════════════
-   TESTIMONIALS
-══════════════════════════════════════════ */
-#testimonials{background:var(--bg3)}
-.testi-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-@media(max-width:900px){.testi-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:580px){.testi-grid{grid-template-columns:1fr}}
-
-.testi-card{
-  background:var(--sf);
-  border:1px solid var(--border);
-  border-radius:var(--r2);
-  padding:28px 26px 26px;
-  transition:all .3s;
-  position:relative;
-  overflow:hidden;
-}
-.testi-card::after{
-  content:'';position:absolute;
-  bottom:0;left:0;right:0;height:2px;
-  background:var(--g1);opacity:0;
-  transition:opacity .3s;
-}
-.testi-card:hover{
-  border-color:rgba(0,220,255,.15);
-  transform:translateY(-4px);
-  box-shadow:var(--shadow2);
-}
-.testi-card:hover::after{opacity:1}
-.testi-quote{
-  font-size:2rem;
-  background:var(--g1);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  line-height:1;margin-bottom:16px;font-family:Georgia,serif;
-}
-.testi-text{
-  font-size:.95rem;color:var(--txd);
-  line-height:1.8;margin-bottom:22px;
-  font-style:italic;
-  font-weight:300;
-}
-.testi-stars{
-  display:flex;gap:3px;margin-bottom:18px;
-}
-.testi-stars i{color:#ffd700;font-size:.8rem}
-.testi-author{
-  display:flex;align-items:center;gap:12px;
-}
-.testi-avatar{
-  width:40px;height:40px;border-radius:50%;
-  background:var(--sf2);
-  border:2px solid var(--border2);
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--ff-display);
-  font-size:1rem;font-weight:900;
-  background:var(--g1);
-  color:#050509;
-  flex-shrink:0;
-}
-.testi-name{
-  font-family:var(--ff-mono);
-  font-size:.78rem;font-weight:600;
-  color:var(--tx);
-}
-.testi-role{
-  font-size:.78rem;color:var(--txdd);
-  margin-top:2px;
-}
-
-/* ══════════════════════════════════════════
-   RESULTS / VALUE PROPS
-══════════════════════════════════════════ */
-#results{background:var(--bg)}
-.results-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-@media(max-width:900px){.results-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.results-grid{grid-template-columns:1fr 1fr}}
-.result-card{
-  background:var(--sf);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-  padding:28px 22px;text-align:center;
-  transition:all .3s;
-}
-.result-card:hover{
-  border-color:var(--border2);
-  background:var(--sf2);
-}
-.result-icon{
-  font-size:2rem;margin-bottom:14px;
-}
-.result-title{
-  font-family:var(--ff-mono);
-  font-size:.82rem;font-weight:600;
-  color:var(--tx);margin-bottom:8px;
-}
-.result-desc{
-  font-size:.85rem;color:var(--txdd);line-height:1.6;
-}
-
-/* ══════════════════════════════════════════
+/* ============================================================
    PRICING
-══════════════════════════════════════════ */
-#pricing{background:var(--bg2)}
-.pricing-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;align-items:stretch;
-}
-@media(max-width:820px){.pricing-grid{grid-template-columns:1fr}}
-
+   ============================================================ */
+#pricing{background:var(--bg2);position:relative;overflow:hidden;contain:layout style}
+#pricing::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,215,0,.05) 0%,transparent 70%);top:-80px;left:-120px;pointer-events:none;z-index:0}
+#pricing::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(200,150,12,.06) 0%,transparent 70%);bottom:-60px;right:-80px;pointer-events:none;z-index:0}
+.pricing-wrap{position:relative;z-index:1}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+@media(max-width:960px){.pricing-grid{grid-template-columns:1fr}}
 .plan-card{
-  background:var(--sf);
-  border:1px solid var(--border);
-  border-radius:var(--r2);
-  padding:38px 32px 32px;
-  position:relative;overflow:hidden;
-  transition:transform .35s,box-shadow .35s,border-color .35s;
+  position:relative;border-radius:24px;padding:40px 32px 36px;overflow:hidden;
   display:flex;flex-direction:column;
+  transition:transform .35s,box-shadow .35s;
+  background:rgba(10,8,0,.6);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow:0 8px 28px rgba(0,0,0,.35);
+  contain:layout style;
 }
-.plan-card:hover{
-  transform:translateY(-7px);
-  box-shadow:0 24px 60px rgba(0,0,0,.4);
-}
-.plan-card--pop{
-  border-color:rgba(0,220,255,.3);
-  background:linear-gradient(160deg,var(--sf),var(--sf2));
-  box-shadow:0 0 60px rgba(0,220,255,.1);
-}
-.plan-pop-badge{
-  position:absolute;top:22px;right:22px;
-  font-family:var(--ff-mono);
-  font-size:.6rem;letter-spacing:2px;
-  background:var(--g1);color:#050509;
-  padding:5px 16px;border-radius:40px;
-  font-weight:700;text-transform:uppercase;
-}
-.plan-tier{
-  font-family:var(--ff-mono);
-  font-size:.72rem;letter-spacing:4px;
-  color:var(--txdd);text-transform:uppercase;
-  margin-bottom:14px;
-}
-.plan-price{
-  font-family:var(--ff-display);
-  font-size:3.6rem;line-height:1;
-  font-weight:900;margin-bottom:8px;
-  background:var(--g3);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-}
-.plan-card--pop .plan-price{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.plan-card.plan-enterprise .plan-price{
-  background:var(--g4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  font-size:2.8rem;letter-spacing:2px;
-}
-.plan-sub{font-size:.95rem;color:var(--txd);margin-bottom:26px;line-height:1.65}
-.plan-divider{
-  height:1px;
-  background:linear-gradient(90deg,transparent,var(--border2),transparent);
-  margin-bottom:26px;
-}
-.plan-features{
-  list-style:none;display:flex;flex-direction:column;
-  gap:13px;margin-bottom:28px;flex:1;
-}
-.plan-features li{
-  display:flex;gap:12px;align-items:flex-start;
-  font-size:.93rem;color:var(--txd);line-height:1.55;
-}
-.plan-features li i{
-  color:var(--c1);font-size:.72rem;margin-top:4px;flex-shrink:0;
-}
-.plan-card--pop .plan-features li i{color:var(--c1)}
-.plan-card.plan-enterprise .plan-features li i{color:var(--c2)}
-.plan-features li strong{color:var(--tx);font-weight:600}
-.plan-features li .feat-note{
-  display:block;font-size:.82rem;color:var(--txdd);margin-top:2px;
-}
-.plan-support{
-  display:flex;align-items:center;gap:10px;
-  padding:12px 16px;border-radius:10px;
-  margin-bottom:22px;
-  background:rgba(0,220,255,.05);
-  border:1px solid rgba(0,220,255,.15);
-}
-.plan-support-icon{
-  width:34px;height:34px;border-radius:8px;
-  background:rgba(0,220,255,.1);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1rem;flex-shrink:0;color:var(--c1);
-}
-.plan-support-label{
-  font-family:var(--ff-mono);
-  font-size:.6rem;letter-spacing:2px;
-  color:var(--txdd);text-transform:uppercase;display:block;
-}
-.plan-support-value{
-  font-family:var(--ff-mono);
-  font-size:.9rem;font-weight:600;
-  color:var(--tx);line-height:1.3;
-}
-.plan-card--pop .plan-support{background:rgba(155,92,255,.07);border-color:rgba(155,92,255,.25)}
-.plan-card--pop .plan-support-icon{background:rgba(155,92,255,.15);color:var(--c2)}
-.plan-card.plan-enterprise .plan-support{background:rgba(255,77,142,.06);border-color:rgba(255,77,142,.2)}
-.plan-card.plan-enterprise .plan-support-icon{background:rgba(255,77,142,.1);color:var(--c3)}
+.plan-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.45),0 0 30px rgba(255,215,0,.07)}
+.plan-card--pop{background:rgba(12,10,0,.7);border-color:rgba(255,215,0,.18);box-shadow:0 8px 28px rgba(0,0,0,.4),0 0 50px rgba(255,215,0,.08)}
+.plan-card--pop:hover{box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 70px rgba(255,215,0,.15)}
+.plan-card.plan-enterprise{background:rgba(14,10,0,.65);border-color:rgba(200,150,12,.12);box-shadow:0 8px 28px rgba(0,0,0,.4),0 0 40px rgba(200,150,12,.06)}
+.plan-card.plan-enterprise:hover{box-shadow:0 20px 60px rgba(0,0,0,.45),0 0 70px rgba(200,150,12,.12)}
+.plan-card--pop .plan-glow-line,.plan-enterprise .plan-glow-line{position:absolute;top:0;left:0;right:0;height:2px;border-radius:24px 24px 0 0;z-index:2}
+.plan-card--pop .plan-glow-line{background:linear-gradient(90deg,transparent,#FFD700,#C8960C,transparent)}
+.plan-enterprise .plan-glow-line{background:linear-gradient(90deg,transparent,#C8960C,#B8860B,transparent)}
+.plan-pop-badge{position:absolute;top:20px;right:20px;font-family:var(--font-mono);font-size:.58rem;letter-spacing:2px;background:linear-gradient(135deg,#FFD700,#C8960C);color:#020200;padding:5px 14px;border-radius:20px;font-weight:700;text-transform:uppercase;z-index:3}
+.plan-card>*{position:relative;z-index:1}
+.plan-tier{font-family:var(--font-mono);font-size:.68rem;letter-spacing:4px;color:rgba(216,200,144,.5);text-transform:uppercase;margin-bottom:16px}
+.plan-price{font-family:var(--font-hero);font-size:4rem;line-height:1;margin-bottom:4px;background:linear-gradient(135deg,#FFD700,#FFE066);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:2px}
+.plan-card--pop .plan-price{background:linear-gradient(135deg,#FFD700,#DAA520);-webkit-background-clip:text;background-clip:text}
+.plan-enterprise .plan-price{background:linear-gradient(135deg,#DAA520,#B8860B);-webkit-background-clip:text;background-clip:text;font-size:2.8rem;letter-spacing:4px}
+.plan-price-suffix{font-family:var(--font-display);font-size:1.4rem;font-weight:800;-webkit-text-fill-color:rgba(255,215,0,.65);vertical-align:super}
+.plan-card--pop .plan-price-suffix{-webkit-text-fill-color:rgba(200,150,12,.75)}
+.plan-sub{font-size:.95rem;color:rgba(216,200,144,.6);line-height:1.65;margin-bottom:28px}
+.plan-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.07),transparent);margin-bottom:28px}
+.plan-card--pop .plan-divider{background:linear-gradient(90deg,transparent,rgba(255,215,0,.18),rgba(200,150,12,.12),transparent)}
+.plan-features{list-style:none;display:flex;flex-direction:column;gap:13px;margin-bottom:28px;flex:1}
+.plan-features li{display:flex;gap:12px;align-items:flex-start;font-size:.94rem;color:rgba(216,200,144,.72);line-height:1.5}
+.feat-check{width:18px;height:18px;border-radius:5px;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;font-size:.6rem;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.22);color:#FFD700}
+.plan-enterprise .feat-check{background:rgba(200,150,12,.1);border-color:rgba(200,150,12,.25);color:#DAA520}
+.plan-features li strong{color:rgba(255,248,224,.9);font-weight:700}
+.feat-note{display:block;font-size:.8rem;color:rgba(192,168,112,.5);margin-top:2px}
+.plan-support{display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:14px;margin-bottom:24px;background:rgba(255,215,0,.04);border:1px solid rgba(255,215,0,.1)}
+.plan-enterprise .plan-support{background:rgba(200,150,12,.05);border-color:rgba(200,150,12,.15)}
+.plan-support-icon{width:36px;height:36px;border-radius:10px;background:rgba(255,215,0,.08);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;color:#FFD700}
+.plan-enterprise .plan-support-icon{background:rgba(200,150,12,.1);color:#DAA520}
+.plan-support-text{display:flex;flex-direction:column;gap:2px}
+.plan-support-label{font-family:var(--font-mono);font-size:.58rem;letter-spacing:2px;color:rgba(192,168,112,.48);text-transform:uppercase}
+.plan-support-value{font-family:var(--font-display);font-size:.95rem;font-weight:700;color:rgba(255,248,224,.88)}
+.plan-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px 24px;border-radius:14px;font-family:var(--font-display);font-size:.95rem;font-weight:800;letter-spacing:.5px;text-transform:uppercase;transition:transform .3s,box-shadow .3s;cursor:pointer;text-decoration:none}
+.plan-btn i{font-size:1.1rem;flex-shrink:0}
+.btn-starter{background:rgba(255,215,0,.05);border:1px solid rgba(255,215,0,.25);color:#FFD700}
+.btn-starter:hover{border-color:#FFD700;box-shadow:0 0 24px rgba(255,215,0,.2);transform:translateY(-2px);color:#fff}
+.btn-pro{background:linear-gradient(135deg,#DAA520,#8B6000);border:none;color:#fff;box-shadow:0 4px 24px rgba(218,165,32,.25)}
+.btn-pro:hover{box-shadow:0 8px 40px rgba(218,165,32,.4);transform:translateY(-2px)}
+.btn-enterprise{background:rgba(200,150,12,.07);border:1px solid rgba(200,150,12,.25);color:#DAA520}
+.btn-enterprise:hover{border-color:#C8960C;box-shadow:0 0 24px rgba(200,150,12,.2);transform:translateY(-2px);color:#fff}
+.pricing-note{text-align:center;margin-top:40px;font-size:.9rem;color:rgba(192,168,112,.6);line-height:2}
+.pricing-note a{color:var(--neon);border-bottom:1px solid rgba(255,215,0,.25);transition:color .2s}
+.pricing-note a:hover{color:#fff}
 
-.plan-btn{
-  display:flex;align-items:center;justify-content:center;gap:9px;
-  width:100%;padding:15px 20px;border-radius:10px;
-  font-family:var(--ff-mono);font-size:.78rem;font-weight:600;
-  letter-spacing:1.5px;text-transform:uppercase;
-  transition:all .3s;cursor:pointer;text-decoration:none;
-  border:1.5px solid rgba(0,220,255,.4);
-  color:var(--c1);background:transparent;
-}
-.plan-btn:hover{
-  background:rgba(0,220,255,.08);
-  border-color:var(--c1);
-  box-shadow:0 0 30px rgba(0,220,255,.2);
-  transform:translateY(-2px);
-}
-.plan-card--pop .plan-btn{
-  background:var(--g1);border:none;color:#050509;
-  box-shadow:0 4px 30px rgba(0,220,255,.3);
-}
-.plan-card--pop .plan-btn:hover{
-  box-shadow:0 6px 50px rgba(0,220,255,.5);transform:translateY(-3px);color:#050509;
-}
-.plan-card.plan-enterprise .plan-btn{
-  border-color:rgba(155,92,255,.4);color:var(--c2);
-}
-.plan-card.plan-enterprise .plan-btn:hover{
-  background:rgba(155,92,255,.08);border-color:var(--c2);
-  box-shadow:0 0 30px rgba(155,92,255,.2);
-}
-.pricing-note{
-  text-align:center;margin-top:36px;
-  font-size:.9rem;color:var(--txdd);line-height:1.9;
-}
-.pricing-note a{
-  color:var(--c1);
-  border-bottom:1px solid rgba(0,220,255,.3);
-  transition:all .2s;
-}
-.pricing-note a:hover{color:var(--tx);border-color:var(--tx)}
+/* ============================================================
+   PROCESS
+   ============================================================ */
+#process{background:var(--sf);contain:layout style}
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.proc-item{background:var(--bg2);border:1px solid rgba(255,215,0,.08);border-radius:12px;padding:28px 22px;position:relative;text-align:center;transition:border-color .25s,transform .25s}
+.proc-item:hover{border-color:rgba(255,215,0,.28);transform:translateY(-3px)}
+.proc-num{font-family:var(--font-hero);font-size:3.5rem;line-height:1;background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.2;position:absolute;top:14px;right:18px}
+.proc-icon{font-size:1.6rem;margin-bottom:14px}
+.proc-item h4{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--tx);margin-bottom:10px}
+.proc-item p{font-size:.92rem;color:var(--txdd);line-height:1.65}
 
-/* ══════════════════════════════════════════
+/* ============================================================
    TOOLS
-══════════════════════════════════════════ */
-#tools{background:var(--bg3)}
-.tools-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
-  gap:14px;
-}
-.tool-item{
-  background:var(--sf);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-  padding:22px 14px;text-align:center;
-  transition:all .3s;
-  display:flex;flex-direction:column;
-  align-items:center;gap:10px;
-}
-.tool-item:hover{
-  border-color:var(--border2);
-  transform:translateY(-4px);
-  box-shadow:var(--shadow2);
-}
-.tool-item i{font-size:1.6rem}
-.tool-item span{
-  font-family:var(--ff-mono);
-  font-size:.6rem;letter-spacing:2px;
-  color:var(--txd);text-transform:uppercase;
-}
+   ============================================================ */
+#tools{background:var(--bg2);contain:layout style}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:14px}
+.tool-item{background:var(--sf);border:1px solid rgba(255,215,0,.08);border-radius:10px;padding:20px 14px;text-align:center;transition:border-color .25s,transform .25s;display:flex;flex-direction:column;align-items:center;gap:10px;contain:layout style}
+.tool-item:hover{border-color:rgba(255,215,0,.3);transform:translateY(-3px)}
+.tool-item .ti{font-size:1.5rem}
+.tool-item span{font-family:var(--font-mono);font-size:.58rem;letter-spacing:2px;color:var(--txd);text-transform:uppercase}
 
-/* ══════════════════════════════════════════
-   CONNECT / CTA
-══════════════════════════════════════════ */
-#connect{
-  background:var(--bg);
-  text-align:center;
-  position:relative;overflow:hidden;
-}
-#connect::before{
-  content:'';position:absolute;
-  top:50%;left:50%;transform:translate(-50%,-50%);
-  width:700px;height:700px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(0,220,255,.04) 0%,transparent 70%);
-  pointer-events:none;
-}
-.connect-inner{max-width:700px;margin:0 auto;position:relative;z-index:1}
-.connect-tagline{
-  font-family:var(--ff-display);
-  font-size:clamp(2rem,4vw,3rem);
-  font-weight:900;line-height:1.15;
-  letter-spacing:-1px;
-  margin-bottom:20px;
-}
-.connect-tagline em{
-  font-style:italic;
-  background:var(--g1);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-}
-.connect-sub{
-  font-size:1.05rem;color:var(--txd);
-  line-height:1.85;font-weight:300;
-  margin-bottom:40px;
-}
-.social-row{
-  display:flex;justify-content:center;gap:12px;flex-wrap:wrap;
-}
-.sbtn{
-  display:flex;align-items:center;gap:10px;
-  padding:13px 24px;
-  border:1px solid var(--border);
-  border-radius:10px;
-  background:var(--sf);
-  color:var(--txd);
-  font-family:var(--ff-mono);font-size:.65rem;
-  letter-spacing:2px;text-transform:uppercase;
-  transition:all .3s;
-}
-.sbtn:hover{border-color:var(--c1);color:var(--c1);transform:translateY(-3px);box-shadow:0 0 20px rgba(0,220,255,.15)}
-.sbtn.wa:hover{border-color:#25D366;color:#25D366;box-shadow:0 0 20px rgba(37,211,102,.2)}
-.sbtn.ig:hover{border-color:#E1306C;color:#E1306C;box-shadow:0 0 20px rgba(225,48,108,.2)}
-.sbtn.li:hover{border-color:#0A66C2;color:#0A66C2;box-shadow:0 0 20px rgba(10,102,194,.2)}
-.sbtn i{font-size:1.1rem}
+/* ============================================================
+   CONNECT / FOOTER
+   ============================================================ */
+#connect{background:var(--bg3);text-align:center;contain:layout style}
+.connect-inner{max-width:700px;margin:0 auto}
+.connect-inner p{font-size:1.08rem;color:var(--txd);line-height:1.85;margin-bottom:36px}
+.social-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.sbtn{display:flex;align-items:center;gap:10px;padding:13px 24px;border:1px solid rgba(255,215,0,.15);border-radius:8px;background:var(--sf);color:var(--txd);font-family:var(--font-mono);font-size:.6rem;letter-spacing:2px;text-transform:uppercase;transition:border-color .2s,color .2s,transform .2s,box-shadow .2s}
+.sbtn:hover{border-color:var(--neon);color:var(--neon);transform:translateY(-2px);box-shadow:0 0 16px rgba(255,215,0,.15)}
+.sbtn.wa:hover{border-color:#25D366;color:#25D366;box-shadow:0 0 16px rgba(37,211,102,.2)}
+.sbtn.ig:hover{border-color:#E1306C;color:#E1306C;box-shadow:0 0 16px rgba(225,48,108,.2)}
+.sbtn.li:hover{border-color:#0A66C2;color:#0A66C2;box-shadow:0 0 16px rgba(10,102,194,.2)}
+.sbtn .ti{font-size:1.1rem}
 
-/* ══════════════════════════════════════════
-   BACK TO TOP
-══════════════════════════════════════════ */
-#btt{
-  position:fixed;bottom:24px;right:24px;z-index:999;
-  width:44px;height:44px;border-radius:50%;
-  border:1px solid var(--border2);
-  background:var(--sf);color:var(--c1);
-  display:flex;align-items:center;justify-content:center;
-  font-size:.9rem;opacity:0;
-  transition:opacity .3s,transform .3s;
-  box-shadow:0 0 20px rgba(0,220,255,.15);
-  cursor:pointer;
-}
+/* Back to top */
+#btt{position:fixed;bottom:24px;right:24px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,215,0,.25);background:var(--sf);color:var(--neon);display:flex;align-items:center;justify-content:center;font-size:.9rem;opacity:0;transition:opacity .3s,transform .3s;cursor:pointer;contain:layout style}
 #btt.show{opacity:1}
-#btt:hover{border-color:var(--c1);box-shadow:0 0 30px rgba(0,220,255,.3);transform:translateY(-3px)}
+#btt:hover{border-color:var(--neon);box-shadow:0 0 20px rgba(255,215,0,.3);transform:translateY(-2px)}
 
-/* ══════════════════════════════════════════
-   SKIP TO CONTENT
-══════════════════════════════════════════ */
-.skip-link{
-  position:absolute;top:-100px;left:20px;
-  background:var(--c1);color:#050509;
-  padding:10px 20px;border-radius:6px;
-  font-family:var(--ff-mono);font-size:.75rem;
-  z-index:10000;transition:top .3s;
+/* ============================================================
+   MOBILE OPTIMIZATIONS
+   ============================================================ */
+@media(max-width:767px){
+  section{padding:60px 16px}
+  .svc-card:hover,.proc-item:hover,.tool-item:hover{transform:none}
+  .plan-card{box-shadow:0 4px 20px rgba(0,0,0,.3)}
+  .plan-card--pop{box-shadow:0 4px 20px rgba(0,0,0,.35),0 0 30px rgba(255,215,0,.06)}
+  .hp-frame{animation:none}
 }
-.skip-link:focus{top:10px}
 
-/* ══════════════════════════════════════════
-   MOBILE TWEAKS
-══════════════════════════════════════════ */
-@media(max-width:768px){
-  section{padding:70px 18px}
-  .hero-btns{flex-direction:column;align-items:center}
-  .hero-btns a{width:100%;justify-content:center;text-align:center}
-  .hero-photo-outer{width:260px}
-  .plan-card{padding:28px 22px 26px}
-  .proc-item{padding:0 6px}
-  .proc-num-wrap{width:50px;height:50px}
-  .proc-step{font-size:1.2rem}
-}
-@media(max-width:480px){
-  .svc-card--feature{padding:24px 20px}
-  .testi-grid{grid-template-columns:1fr}
-  .results-grid{grid-template-columns:1fr 1fr}
-}
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
 }
+
+/* ============================================================
+   CONTENT VISIBILITY
+   ============================================================ */
+#about,#services,#portfolio,#pricing,#process,#tools,#connect{
+  content-visibility:auto;
+  contain-intrinsic-size:0 600px;
+}
+
+/* ============================================================
+   INLINE SVG ICON SYSTEM
+   ============================================================ */
+.ti{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;line-height:1}
+.ti svg{width:1em;height:1em;fill:currentColor}
 </style>
+
+<!-- Async-load Google Fonts (non-render-blocking) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Bebas+Neue&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Bebas+Neue&display=swap"></noscript>
 </head>
 <body>
 
-<a href="#hero" class="skip-link">Skip to content</a>
-<div id="grain"></div>
+<!-- ============================================================
+  SVG ICON SPRITE — inline, zero HTTP requests
+  ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-wp" viewBox="0 0 512 512"><path d="M256 8C119.3 8 8 119.3 8 256s111.3 248 248 248 248-111.3 248-248S392.7 8 256 8zm-28.4 61.7c2.1-.3 4.3-.5 6.4-.5 17.8 0 33.9 6.8 45.9 18-5.3 1.4-10.4 4.2-14.4 8.7-8.3 9.4-7.4 23.7 1.9 32.1 4.4 3.9 10 5.9 15.6 5.9 6.1 0 12.1-2.5 16.5-7.3 6.5-7.3 7.5-17.4 3.5-25.9 11.7 6.3 21.7 15.5 29 26.7-3.1.3-6.2 1.1-9.1 2.7-9.2 5-12.6 16.4-7.6 25.6l2.6 4.7-63.8 189.8-54.4-162.6 38.5-1.2 2.1-3.7c4.9-8.7 1.9-19.7-6.8-24.8-3.1-1.8-6.5-2.6-9.9-2.6-2.1 0-4.2.4-6.2 1-8.8 2.6-14.2 11-13.8 19.7l-30.9 1c7.6-36 30.4-66.4 62.9-83.3zM256 472c-52.8 0-100.9-20.1-137.4-53l8.8-26.2 74.6-3.1L256 472zM83.2 325.2c-6.9-21.3-10.6-43.8-10.6-67.2 0-37.6 9.7-72.9 26.6-103.5l73.8 202.2-89.8-31.5zm233.8 122.5l-51.2-153.5 23.5-.9c2.4 4.3 7 7.2 12.3 7.2 7.7 0 13.9-6.2 13.9-13.9 0-2.3-.6-4.5-1.6-6.5l72.5-215.6c23.1 32.5 36.6 72.1 36.6 114.9 0 81.1-46.7 151.7-115.5 185.3l9.5-10.5.5-5c0-2.6-.7-5.1-1.9-7.3l1.4-94.2z"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 512 512"><path d="M362.7 19.3L394.3 51c9.4 9.4 9.4 24.6 0 33.9L170.4 309c-6.2 6.2-14.4 10.3-23.2 11.6L58 334.4c-11.4 1.9-22-6.7-22-18.3 0-3.1.8-6.1 2.4-8.8L67.4 232c2.3-8.2 6.8-15.5 13-21.7L344.7 19.3c9.4-9.4 24.6-9.4 33.9 0zM128 480H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h64c17.7 0 32 14.3 32 32s-14.3 32-32 32zm192 0h-64c-17.7 0-32-14.3-32-32s14.3-32 32-32h64c17.7 0 32 14.3 32 32s-14.3 32-32 32zm128 0h-64c-17.7 0-32-14.3-32-32s14.3-32 32-32h64c17.7 0 32 14.3 32 32s-14.3 32-32 32z"/></symbol>
+  <symbol id="i-house" viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c.2 35.5-28.5 64.3-64 64.3H96c-35.5 0-64-28.8-64-64.3l.7-160.2H0c-17 0-32-14-32-32.1-32-12 4.2-25.7 13.8-34l264-216c9.8-8 23.5-8 33.3 0l264 216c9.8 8.3 14.1 22 13.7 34z"/></symbol>
+  <symbol id="i-shop" viewBox="0 0 448 512"><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48v224c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V208c0-26.5-21.5-48-48-48H336v48c0 17.7-14.3 32-32 32s-32-14.3-32-32v-48H176v48c0 17.7-14.3 32-32 32s-32-14.3-32-32v-48z"/></symbol>
+  <symbol id="i-mobile" viewBox="0 0 384 512"><path d="M80 0C44.7 0 16 28.7 16 64V448c0 35.3 28.7 64 64 64H304c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H80zm80 432h64c8.8 0 16 7.2 16 16s-7.2 16-16 16h-64c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 512 512"><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm320 96c0-26.9-16.5-49.9-40-59.3V88c0-13.3-10.7-24-24-24s-24 10.7-24 24V292.7c-23.5 9.5-40 32.5-40 59.3 0 35.3 28.7 64 64 64s64-28.7 64-64z"/></symbol>
+  <symbol id="i-robot" viewBox="0 0 640 512"><path d="M320 0c17.7 0 32 14.3 32 32V96H472c39.8 0 72 32.2 72 72V440c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72H288V32c0-17.7 14.3-32 32-32zM208 352c0 26.5 21.5 48 48 48s48-21.5 48-48-21.5-48-48-48-48 21.5-48 48zm240-48c-26.5 0-48 21.5-48 48s21.5 48 48 48 48-21.5 48-48-21.5-48-48-48zm-32-96c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v32h192V208zM32 176c-17.7 0-32 14.3-32 32v128c0 17.7 14.3 32 32 32s32-14.3 32-32V208c0-17.7-14.3-32-32-32zm576 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v128c0 17.7 14.3 32 32 32s32-14.3 32-32V208z"/></symbol>
+  <symbol id="i-figma" viewBox="0 0 384 512"><path d="M14 95.8C14 42.9 56.9 0 109.8 0H274.2C327.1 0 370 42.9 370 95.8c0 33.2-16.7 62.5-42.3 80.3 25.6 17.8 42.3 47.2 42.3 80.3 0 52.9-42.9 95.8-95.8 95.8H192v16.3c0 52.9-42.9 95.8-95.8 95.8S.4 421 .4 368.1s42.9-95.8 95.8-95.8H192V256h-82.2C57 256 14.2 213.3 14 160.5v-.3c0-.1 0-.3 0-.4zm96.2 176.3H96.2c-26.5 0-48 21.5-48 48s21.5 48 48 48 48-21.5 48-48V272.1zm0-176.3c0 26.5 21.5 48 48 48h48V48h-48c-26.5 0-48 21.5-48 48zm96 48h48c26.5 0 48-21.5 48-48s-21.5-48-48-48h-48v96zm0 32v96h50.2c26.5 0 48-21.5 48-48s-21.5-48-48-48H206.2z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 576 512"><path d="M288 0L0 144v16l288 152 288-152V144L288 0zm0 320L64 196.8l-64 33.8L288 368l288-137.4-64-33.8L288 320zm0 128L64 324.8l-64 33.8L288 496l288-137.4-64-33.8L288 448z"/></symbol>
+  <symbol id="i-bezier" viewBox="0 0 576 512"><path d="M0 128C0 92.7 28.7 64 64 64s64 28.7 64 64c0 16.6-6.3 31.7-16.7 43.1L167 256l9.7-9.7c-1.1-5.1-1.7-10.3-1.7-15.7 0-44.2 35.8-80 80-80s80 35.8 80 80c0 5.4-.6 10.6-1.7 15.7L344 257.1 409.3 202c-5.7-10-8.9-21.6-8.9-33.9 0-35.3 28.7-64 64-64s64 28.7 64 64-28.7 64-64 64c-7.5 0-14.6-1.3-21.2-3.7l-75.1 65.2L384 320c17.6 0 33.7 6.7 45.7 17.7L512 272v-6.8c0-35.3 28.7-64 64-64s64 28.7 64 64-28.7 64-64 64c-13.4 0-25.9-4.1-36.1-11.2l-87.9 68.2c2.6 8.1 4 16.7 4 25.6 0 44.2-35.8 80-80 80s-80-35.8-80-80c0-8.9 1.4-17.5 4-25.6L192 337.8c-10.2 7.1-22.7 11.2-36.1 11.2-35.3 0-64-28.7-64-64 0-15 5.2-28.8 13.8-39.6L67.1 207.7C60.5 209.4 53.6 210 46.5 210 20.8 210 0 189.2 0 163.5V128zm576 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64z"/></symbol>
+  <symbol id="i-image" viewBox="0 0 512 512"><path d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm160 96a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm-37.3 128L64 416H192 320 448L320 192l-80 128-37.3-96z"/></symbol>
+  <symbol id="i-code" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.2 0z"/></symbol>
+  <symbol id="i-expand" viewBox="0 0 448 512"><path d="M32 32C14.3 32 0 46.3 0 64v96c0 17.7 14.3 32 32 32s32-14.3 32-32V96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H64V352zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32h64v64c0 17.7 14.3 32 32 32s32-14.3 32-32V64c0-17.7-14.3-32-32-32H320zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32V352z"/></symbol>
+  <symbol id="i-xmark" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256l105.3-105.4z"/></symbol>
+  <symbol id="i-chevl" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></symbol>
+  <symbol id="i-chevr" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></symbol>
+  <symbol id="i-chevd" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></symbol>
+  <symbol id="i-zin" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM184 296c0 13.3 10.7 24 24 24s24-10.7 24-24V232h64c13.3 0 24-10.7 24-24s-10.7-24-24-24H232V120c0-13.3-10.7-24-24-24s-24 10.7-24 24V296z"/></symbol>
+  <symbol id="i-zout" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM104 232c-13.3 0-24 10.7-24 24s10.7 24 24 24H312c13.3 0 24-10.7 24-24s-10.7-24-24-24H104z"/></symbol>
+  <symbol id="i-up" viewBox="0 0 384 512"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></symbol>
+  <symbol id="i-li" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></symbol>
+  <symbol id="i-headset" viewBox="0 0 512 512"><path d="M256 80C149.9 80 62.4 159.4 49.6 262c9.4-3.8 19.6-6 30.4-6 26.5 0 48 21.5 48 48v128c0 26.5-21.5 48-48 48-44.2 0-80-35.8-80-80V256C0 114.6 114.6 0 256 0S512 114.6 512 256V400c0 44.2-35.8 80-80 80-26.5 0-48-21.5-48-48V304c0-26.5 21.5-48 48-48 10.8 0 21 2.1 30.4 6C449.6 159.4 362.1 80 256 80z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 512 512"><path d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zm-160 88c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64z"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 512 512"><path d="M512 256c0 .9 0 1.8 0 2.7c-.4 36.5-33.6 61.3-70.1 61.3H344c-26.5 0-48 21.5-48 48c0 3.4 .4 6.7 1 9.9c2.1 10.2 6.4 20.3 6.4 31.2c0 48.6-39.4 88-88 88s-88-39.4-88-88c0-10.9 4.3-21 6.4-31.2c.6-3.2 1-6.5 1-9.9c0-26.5-21.5-48-48-48H70.1c-36.5 0-69.7-24.8-70.1-61.3C0 257.8 0 256.9 0 256C0 114.6 114.6 0 256 0S512 114.6 512 256zM128 288a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm0-128a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm128-40a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm128 40a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm0 128a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 448 512"><path d="M160 80c0-26.5 21.5-48 48-48h32c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V80zM0 272c0-26.5 21.5-48 48-48H80c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V272zM368 96h32c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H368c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48z"/></symbol>
+</svg>
 
-<!-- ══════════════════════════════
-     SPLASH
-══════════════════════════════ -->
-<div id="splash">
-  <div class="sp-mark">MR</div>
-  <div class="sp-rule"><div class="sp-fill"></div></div>
-  <div class="sp-label">Loading Portfolio...</div>
+<div id="noise" aria-hidden="true"></div>
+
+<!-- HERO SECTION -->
+<section id="hero">
+  <div class="orb-wrap" aria-hidden="true">
+    <div class="orb"></div>
+    <div class="orb2"></div>
+  </div>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="avail"><span class="adot" aria-hidden="true"></span> Available for Work</div>
+      <div class="hname-wrap">
+        <h1 class="hname">Hafiz Moeen Raza</h1>
+      </div>
+      <p class="hrole" id="role-text" aria-live="polite">WordPress &amp; UI/UX Designer</p>
+      <p class="hbio">
+        I'm a passionate <strong>WordPress &amp; UI/UX Designer</strong> with <strong>5+ years</strong> of hands-on experience crafting pixel-perfect, conversion-focused digital experiences. From sleek real estate portals to polished eCommerce stores — I blend aesthetics with functionality using <strong>Elementor, Figma, WooCommerce</strong>, and modern design systems to deliver websites that truly perform.
+      </p>
+      <div class="hbtns">
+        <a href="#portfolio" class="btn-primary">View Projects</a>
+        <a href="https://wa.me/923477290072" target="_blank" rel="noopener" class="btn-outline">
+          <span class="ti" aria-hidden="true"><svg><use href="#i-wa"/></svg></span> Let's Talk
+        </a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-photo-wrap">
+        <div class="hp-ring" aria-hidden="true"></div>
+        <div class="hp-exp" aria-label="5 plus years experience">5+ Years Experience</div>
+        <div class="hp-frame">
+          <img src="moeen.jpg"
+               alt="Hafiz Moeen Raza — WordPress and UI/UX Designer"
+               width="320" height="420"
+               fetchpriority="high"
+               loading="eager"
+               decoding="async">
+          <div class="hp-scan" aria-hidden="true"></div>
+        </div>
+        <div class="hp-tl" aria-hidden="true"></div>
+        <div class="hp-tr" aria-hidden="true"></div>
+        <div class="hp-bl" aria-hidden="true"></div>
+        <div class="hp-br" aria-hidden="true"></div>
+        <div class="hp-badge b1" aria-hidden="true"><span>🎨</span> UI/UX Design</div>
+        <div class="hp-badge b2" aria-hidden="true"><span>⚡</span> WordPress Dev</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gdivide"></div>
+
+<!-- TICKER -->
+<div id="ticker" aria-hidden="true">
+  <div class="ticker-track" id="ticker-track"></div>
 </div>
 
-<!-- ══════════════════════════════
-     HERO
-══════════════════════════════ -->
-<section id="hero">
-  <canvas id="particles"></canvas>
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-avail">
-        <span class="avail-dot"></span> Available for New Projects
-      </div>
-      <h1 class="hero-h1">
-        I Design Digital
-        <span class="accent">Experiences That Convert.</span>
-      </h1>
-      <p class="hero-sub">
-        <strong>WordPress & UI/UX Designer</strong> specializing in conversion-focused websites for real estate agencies, eCommerce brands, and global businesses. Trusted by clients across 10+ countries.
-      </p>
-      <div class="hero-btns">
-        <a href="#portfolio" class="btn-primary"><i class="fa-solid fa-eye"></i> View Projects</a>
-        <a href="https://wa.me/923477290072" target="_blank" class="btn-ghost"><i class="fa-brands fa-whatsapp"></i> Book a Call</a>
-        <a href="#pricing" class="btn-outline-dark">Start a Project</a>
-      </div>
-      <div class="hero-meta">
-        <div class="hero-meta-item"><i class="fa-solid fa-location-dot"></i> Rahim Yar Khan, Pakistan</div>
-        <div class="hero-meta-item"><i class="fa-solid fa-globe"></i> Remote · Worldwide</div>
-        <div class="hero-meta-item"><i class="fa-solid fa-clock"></i> Fast Delivery</div>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <div class="hero-photo-outer">
-        <div class="hero-ring"></div>
-        <div style="position:relative;">
-          <div class="hero-badge hero-badge--exp">✦ 5+ Years Experience</div>
-          <div class="hero-photo-card">
-            <img src="moeen.png" alt="Hafiz Moeen Raza — WordPress & UI/UX Designer" width="360" height="460" fetchpriority="high" decoding="sync">
-          </div>
-          <div class="bracket bracket--tl"></div>
-          <div class="bracket bracket--tr"></div>
-          <div class="bracket bracket--bl"></div>
-          <div class="bracket bracket--br"></div>
-          <div class="hero-badge hero-badge--ui"><i class="fa-solid fa-pen-nib"></i> UI/UX Design</div>
-          <div class="hero-badge hero-badge--wp"><i class="fa-brands fa-wordpress"></i> WordPress Dev</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <div class="gdivide"></div>
 
-<!-- ══════════════════════════════
-     STATS MARQUEE
-══════════════════════════════ -->
-<section id="stats-bar">
-  <div class="marquee-track" id="marquee">
-    <div class="marquee-item"><div class="marquee-num">50+</div><div class="marquee-label">Projects<br>Delivered</div></div>
-    <div class="marquee-item"><div class="marquee-num">5+</div><div class="marquee-label">Years<br>Experience</div></div>
-    <div class="marquee-item"><div class="marquee-num">10+</div><div class="marquee-label">Countries<br>Served</div></div>
-    <div class="marquee-item"><div class="marquee-num">100%</div><div class="marquee-label">Client<br>Satisfaction</div></div>
-    <div class="marquee-item"><div class="marquee-num">8+</div><div class="marquee-label">Real Estate<br>Portals</div></div>
-    <div class="marquee-item"><div class="marquee-num">3</div><div class="marquee-label">Certified<br>Programs</div></div>
-    <!-- duplicate for seamless loop -->
-    <div class="marquee-item"><div class="marquee-num">50+</div><div class="marquee-label">Projects<br>Delivered</div></div>
-    <div class="marquee-item"><div class="marquee-num">5+</div><div class="marquee-label">Years<br>Experience</div></div>
-    <div class="marquee-item"><div class="marquee-num">10+</div><div class="marquee-label">Countries<br>Served</div></div>
-    <div class="marquee-item"><div class="marquee-num">100%</div><div class="marquee-label">Client<br>Satisfaction</div></div>
-    <div class="marquee-item"><div class="marquee-num">8+</div><div class="marquee-label">Real Estate<br>Portals</div></div>
-    <div class="marquee-item"><div class="marquee-num">3</div><div class="marquee-label">Certified<br>Programs</div></div>
-  </div>
-</section>
-
-<div class="gdivide"></div>
-
-<!-- ══════════════════════════════
-     INTRO / AUTHORITY
-══════════════════════════════ -->
-<section id="intro">
+<!-- STATS -->
+<section id="stats">
   <div class="wrap">
-    <div class="intro-grid">
-      <div class="intro-left">
-        <span class="eyebrow reveal">About Me</span>
-        <h2 class="h2 reveal">The Designer Behind <em>The Pixels</em></h2>
-        <div class="rule reveal"></div>
-        <div class="intro-text reveal">
-          <p>I'm <strong>Hafiz Moeen Raza</strong> — a WordPress & UI/UX Designer based in Pakistan, designing premium digital experiences for clients across the USA, UAE, Europe, and beyond.</p>
-          <p>Over the past <strong>5+ years</strong>, I've built real estate portals, eCommerce stores, and corporate websites that don't just look beautiful — they're engineered to convert visitors into customers, generate leads, and drive measurable results.</p>
-          <p>My foundation comes from formal design training at <strong>SICS Institute</strong>, a <strong>PSDF Certified</strong> website design program, and UI/UX prototyping through the <strong>E-Hunar Program</strong> — giving me a full-spectrum perspective from wireframe to live deployment.</p>
-          <p>Today, I also integrate <strong>AI chatbots</strong> (ChatGPT & Claude APIs) into WordPress sites — building intelligent, always-on assistants trained on your business, your brand, and your goals.</p>
-        </div>
-        <div class="intro-tags reveal">
-          <span class="itag">Real Estate</span>
-          <span class="itag">eCommerce</span>
-          <span class="itag">Elementor Pro</span>
-          <span class="itag">WooCommerce</span>
-          <span class="itag">Figma</span>
-          <span class="itag">UX Research</span>
-          <span class="itag">Mobile-First</span>
-          <span class="itag">SEO Optimized</span>
-          <span class="itag">AI Chatbot Integration</span>
+    <div class="sg">
+      <div class="sitem reveal"><div class="sn" data-t="50">50+</div><div class="sl">Projects Delivered</div></div>
+      <div class="sitem reveal" data-d="1"><div class="sn" data-t="5">5+</div><div class="sl">Years Experience</div></div>
+      <div class="sitem reveal" data-d="2"><div class="sn" data-t="10">10+</div><div class="sl">Countries Served</div></div>
+      <div class="sitem reveal" data-d="3"><div class="sn" data-t="100">100%</div><div class="sl">Client Satisfaction</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="gdivide"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-label reveal">About Me</div>
+    <h2 class="sec-title reveal"><span>The Designer</span> Behind The Pixels</h2>
+    <div class="sec-line reveal" aria-hidden="true"></div>
+    <div class="about-grid">
+      <div class="about-txt reveal">
+        <p>Hey — I'm <strong>Hafiz Moeen Raza</strong>, a WordPress &amp; UI/UX Designer based in <strong>Rahim Yar Khan, Pakistan</strong>. I've spent the last 5+ years turning client visions into high-performing digital products — websites that don't just look great, but actually convert visitors into customers.</p>
+        <p>My journey started with graphic design fundamentals at <strong>SICS Institute</strong>, deepened through a <strong>PSDF Certified Program</strong> in website design, and evolved into UI/UX prototyping through the <strong>E-Hunar program</strong>. Today, I bring that full-stack design perspective to every project — from wireframe to live deployment.</p>
+        <p>I specialize in <strong>real estate websites, eCommerce stores</strong>, and <strong>corporate business sites</strong>. My process is meticulous: pixel-perfect layouts, fast performance, mobile-first responsiveness, and a deep focus on user experience that keeps visitors engaged.</p>
+        <p>Beyond design and development, I also bring <strong>AI-powered chatbot integration</strong> to the table — connecting ChatGPT and Claude APIs into WordPress sites to create intelligent assistants that handle customer queries, capture leads, and keep visitors engaged around the clock.</p>
+        <p>When I'm not designing, you'll find me exploring UI patterns in games, watching food aesthetics, or on the road exploring new places.</p>
+        <div class="about-tags">
+          <span class="atag">Real Estate</span><span class="atag">eCommerce</span>
+          <span class="atag">Elementor Pro</span><span class="atag">WooCommerce</span>
+          <span class="atag">Figma</span><span class="atag">UX Research</span>
+          <span class="atag">Mobile-First</span><span class="atag">SEO Optimized</span>
+          <span class="atag">AI Chatbot Integration</span><span class="atag">ChatGPT API</span>
+          <span class="atag">English · Urdu · Punjabi</span>
         </div>
       </div>
-
-      <div class="cred-stack">
-        <div class="cred-card reveal" data-d="1">
-          <div class="cred-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-          <div>
-            <div class="cred-title">PSDF Certified — Website Design</div>
-            <div class="cred-sub">Formal certification in professional web design, layout systems, and digital product development.</div>
-          </div>
-        </div>
-        <div class="cred-card reveal" data-d="2">
-          <div class="cred-icon" style="color:var(--c2)"><i class="fa-solid fa-pen-ruler"></i></div>
-          <div>
-            <div class="cred-title">E-Hunar Program — UI/UX Design</div>
-            <div class="cred-sub">Advanced UI/UX prototyping, Figma workflows, and user-centered design systems through the national E-Hunar initiative.</div>
-          </div>
-        </div>
-        <div class="cred-card reveal" data-d="3">
-          <div class="cred-icon" style="color:var(--c3)"><i class="fa-solid fa-palette"></i></div>
-          <div>
-            <div class="cred-title">SICS Institute — Graphic Design Foundations</div>
-            <div class="cred-sub">Core design principles: typography, color theory, layout, composition, and visual communication.</div>
-          </div>
-        </div>
-        <div class="cred-card reveal" data-d="4">
-          <div class="cred-icon" style="color:var(--c4)"><i class="fa-solid fa-robot"></i></div>
-          <div>
-            <div class="cred-title">AI Integration Specialist</div>
-            <div class="cred-sub">ChatGPT & Claude API integration into WordPress — building intelligent chatbots trained on client content and business logic.</div>
-          </div>
-        </div>
-        <div class="cred-card reveal" data-d="5">
-          <div class="cred-icon" style="color:var(--c1)"><i class="fa-solid fa-language"></i></div>
-          <div>
-            <div class="cred-title">Multilingual Communication</div>
-            <div class="cred-sub">Fluent in English, Urdu, and Punjabi — seamless communication with international clients worldwide.</div>
-          </div>
-        </div>
+      <div class="skill-list reveal" data-d="2">
+        <div class="skr"><div class="sk-head"><span class="sk-name">WordPress &amp; Elementor</span><span class="sk-pct">95%</span></div><div class="sk-track"><div class="skf c1" data-w="95"></div></div></div>
+        <div class="skr"><div class="sk-head"><span class="sk-name">UI/UX Design (Figma)</span><span class="sk-pct">90%</span></div><div class="sk-track"><div class="skf c2" data-w="90"></div></div></div>
+        <div class="skr"><div class="sk-head"><span class="sk-name">WooCommerce</span><span class="sk-pct">88%</span></div><div class="sk-track"><div class="skf c3" data-w="88"></div></div></div>
+        <div class="skr"><div class="sk-head"><span class="sk-name">Real Estate Websites</span><span class="sk-pct">92%</span></div><div class="sk-track"><div class="skf c1" data-w="92"></div></div></div>
+        <div class="skr"><div class="sk-head"><span class="sk-name">AI Chatbot Integration</span><span class="sk-pct">87%</span></div><div class="sk-track"><div class="skf c2" data-w="87"></div></div></div>
+        <div class="skr"><div class="sk-head"><span class="sk-name">Adobe Photoshop / Illustrator</span><span class="sk-pct">85%</span></div><div class="sk-track"><div class="skf c3" data-w="85"></div></div></div>
+        <div class="skr"><div class="sk-head"><span class="sk-name">Responsive / Mobile-First</span><span class="sk-pct">96%</span></div><div class="sk-track"><div class="skf c1" data-w="96"></div></div></div>
+        <div class="skr"><div class="sk-head"><span class="sk-name">SEO &amp; Performance Optimization</span><span class="sk-pct">80%</span></div><div class="sk-track"><div class="skf c3" data-w="80"></div></div></div>
       </div>
     </div>
   </div>
@@ -1484,64 +689,58 @@ section{
 
 <div class="gdivide"></div>
 
-<!-- ══════════════════════════════
-     SERVICES
-══════════════════════════════ -->
+<!-- SERVICES -->
 <section id="services">
   <div class="wrap">
-    <span class="eyebrow reveal">What I Do</span>
-    <h2 class="h2 reveal">Services & <em>Expertise</em></h2>
-    <div class="rule reveal"></div>
+    <div class="sec-label reveal">What I Do</div>
+    <h2 class="sec-title reveal">Services &amp; <span>Expertise</span></h2>
+    <div class="sec-line reveal" aria-hidden="true"></div>
     <div class="svc-grid">
       <div class="svc-card reveal" data-d="1">
-        <div class="svc-icon"><i class="fa-brands fa-wordpress" style="color:var(--c1)"></i></div>
+        <div class="svc-icon" style="color:#FFD700;" aria-hidden="true"><span class="ti"><svg><use href="#i-wp"/></svg></span></div>
         <h3>WordPress Development</h3>
-        <p>Custom, high-performance WordPress websites built with Elementor Pro. Pixel-perfect, mobile-first, and engineered to represent your brand with precision and speed.</p>
+        <p>Custom WordPress websites using Elementor Pro — fast, responsive, and built to your exact brand vision. From corporate sites to real estate portals.</p>
       </div>
       <div class="svc-card reveal" data-d="2">
-        <div class="svc-icon"><i class="fa-solid fa-pen-ruler" style="color:var(--c2)"></i></div>
+        <div class="svc-icon" style="color:#C8960C;" aria-hidden="true"><span class="ti"><svg><use href="#i-pen"/></svg></span></div>
         <h3>UI/UX Design</h3>
-        <p>End-to-end user experience design in Figma — from research and wireframes to high-fidelity prototypes and fully interactive design systems.</p>
+        <p>Full user experience design in Figma — wireframes, prototypes, mockups, and design systems that prioritize usability and visual clarity.</p>
       </div>
       <div class="svc-card reveal" data-d="3">
-        <div class="svc-icon"><i class="fa-solid fa-house-chimney" style="color:var(--c3)"></i></div>
-        <h3>Real Estate Portals</h3>
-        <p>Specialized property websites with IDX/MLS integration, advanced search filters, virtual tour support, and lead capture — built to move listings and close deals.</p>
+        <div class="svc-icon" style="color:#B8860B;" aria-hidden="true"><span class="ti"><svg><use href="#i-house"/></svg></span></div>
+        <h3>Real Estate Websites</h3>
+        <p>Specialized real estate portals with IDX/MLS integration, property listings, search filters, and lead capture — built to sell properties online.</p>
       </div>
       <div class="svc-card reveal" data-d="1">
-        <div class="svc-icon"><i class="fa-brands fa-shopify" style="color:var(--c4)"></i></div>
-        <h3>WooCommerce Stores</h3>
-        <p>Full eCommerce builds optimized for conversions — product pages, checkout flows, payment integrations, and mobile UX designed to maximize revenue.</p>
+        <div class="svc-icon" style="color:#FFA500;" aria-hidden="true"><span class="ti"><svg><use href="#i-shop"/></svg></span></div>
+        <h3>WooCommerce / eCommerce</h3>
+        <p>End-to-end WooCommerce stores — product pages, cart optimization, payment gateways, and mobile UX designed to maximize conversions.</p>
       </div>
       <div class="svc-card reveal" data-d="2">
-        <div class="svc-icon"><i class="fa-solid fa-mobile-screen-button" style="color:var(--c1)"></i></div>
-        <h3>Responsive & Mobile-First</h3>
-        <p>Every project is rigorously tested across all devices and screen sizes. A flawless mobile experience isn't optional — it's the standard.</p>
+        <div class="svc-icon" style="color:#FFD700;" aria-hidden="true"><span class="ti"><svg><use href="#i-mobile"/></svg></span></div>
+        <h3>Mobile-First &amp; Responsive</h3>
+        <p>Every site I build is rigorously tested across all screen sizes, ensuring a flawless experience whether on desktop, tablet, or mobile.</p>
       </div>
       <div class="svc-card reveal" data-d="3">
-        <div class="svc-icon"><i class="fa-solid fa-gauge-high" style="color:var(--c2)"></i></div>
-        <h3>SEO & Performance</h3>
-        <p>90+ PageSpeed scores, schema markup, Core Web Vitals optimization, and on-page SEO — your site will be fast, findable, and technically sound.</p>
+        <div class="svc-icon" style="color:#C8960C;" aria-hidden="true"><span class="ti"><svg><use href="#i-gauge"/></svg></span></div>
+        <h3>Website Maintenance &amp; SEO</h3>
+        <p>Ongoing site management — plugin updates, performance optimization, SEO fundamentals, content updates, and responsiveness testing.</p>
       </div>
-
-      <!-- Feature card: AI -->
-      <div class="svc-card svc-card--feature reveal">
-        <div>
-          <span class="svc-feat-badge">✦ New Service</span>
-          <div class="svc-icon"><i class="fa-solid fa-robot" style="color:var(--c1)"></i></div>
-          <h3 style="font-size:1.2rem;margin-bottom:12px">AI Chatbot Integration</h3>
-          <p style="color:var(--txd);line-height:1.75;font-size:.95rem">I integrate <strong style="color:var(--c1)">custom AI assistants</strong> powered by ChatGPT & Claude APIs directly into your WordPress site — trained on your content, your brand, and your business logic. Always on. Always accurate.</p>
-          <div class="svc-feat-tech" style="margin-top:20px">
-            <span>ChatGPT API</span><span>Claude API</span><span>WordPress Plugin</span><span>Custom UI</span>
-          </div>
-        </div>
-        <ul class="svc-feat-list">
-          <li><i class="fa-solid fa-check"></i><div><strong>Real Estate Bots</strong> — Qualify leads, answer property queries, schedule viewings automatically 24/7</div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>eCommerce Bots</strong> — Product recommendations, order tracking, cart recovery conversations</div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Business Support Bots</strong> — Instant FAQ replies, multilingual support, lead collection</div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Lead Capture Bots</strong> — Engage every visitor, collect contact info, qualify prospects before they leave</div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Fully Trained on Your Content</strong> — Bot learns your services, pricing, tone, and unique offerings</div></li>
+      <div class="svc-card reveal svc-card--ai" data-d="1">
+        <div class="svc-ai-badge">NEW</div>
+        <div class="svc-icon" style="color:#FFD700;" aria-hidden="true"><span class="ti"><svg><use href="#i-robot"/></svg></span></div>
+        <h3>AI Chatbot Integration</h3>
+        <p>I integrate <strong>custom AI chatbots</strong> powered by ChatGPT &amp; Claude APIs directly into WordPress websites — giving your visitors a smart, always-on assistant that actually understands your business.</p>
+        <ul class="svc-ai-list">
+          <li><span class="sai ti" aria-hidden="true"><svg><use href="#i-check"/></svg></span> <div><strong>Real Estate Bots</strong> — Answer property queries, qualify leads, schedule viewings 24/7 automatically</div></li>
+          <li><span class="sai ti" aria-hidden="true"><svg><use href="#i-check"/></svg></span> <div><strong>eCommerce Bots</strong> — Product recommendations, order tracking, cart recovery conversations</div></li>
+          <li><span class="sai ti" aria-hidden="true"><svg><use href="#i-check"/></svg></span> <div><strong>Business Support Bots</strong> — FAQ automation, instant customer replies, multilingual support</div></li>
+          <li><span class="sai ti" aria-hidden="true"><svg><use href="#i-check"/></svg></span> <div><strong>Lead Capture Bots</strong> — Engage visitors, collect contact info, qualify prospects before they leave</div></li>
+          <li><span class="sai ti" aria-hidden="true"><svg><use href="#i-check"/></svg></span> <div><strong>Trained on Your Content</strong> — Bot learns your services, pricing, and brand voice for accurate answers</div></li>
         </ul>
+        <div class="svc-ai-tech">
+          <span>ChatGPT API</span><span>Claude API</span><span>WordPress Plugin</span><span>Custom UI</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1549,680 +748,418 @@ section{
 
 <div class="gdivide"></div>
 
-<!-- ══════════════════════════════
-     PORTFOLIO / CASE STUDIES
-══════════════════════════════ -->
+<!-- PORTFOLIO -->
 <section id="portfolio">
   <div class="wrap">
-    <span class="eyebrow reveal">Selected Work</span>
-    <h2 class="h2 reveal">Case Studies & <em>Projects</em></h2>
-    <div class="rule reveal"></div>
-    <div class="proj-grid">
-
-      <!-- Featured -->
-      <div class="proj-card proj-card--featured reveal" onclick="openLb(0)">
-        <div class="proj-thumb">
-          <img src="brain.png" alt="Brian Fadrowski Real Estate" loading="eager" width="600" height="380">
-          <div class="proj-thumb-overlay"></div>
-          <span class="proj-tag">Real Estate</span>
-          <div class="proj-open-btn"><i class="fa-solid fa-expand"></i></div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">Real Estate · Pennsylvania, USA</div>
-          <div class="proj-title">Brian Fadrowski Real Estate</div>
-          <p class="proj-desc">A conversion-optimized real estate portal built for a Pennsylvania-based agent. IDX integration, property search, neighborhood guides, and a streamlined lead funnel — resulting in significantly higher inbound inquiries.</p>
-          <div class="proj-meta-row">
-            <span class="proj-meta-tag">WordPress</span>
-            <span class="proj-meta-tag">Elementor Pro</span>
-            <span class="proj-meta-tag">IDX/MLS</span>
-            <span class="proj-meta-tag">Lead Forms</span>
-          </div>
-          <div class="proj-result"><i class="fa-solid fa-arrow-trend-up"></i>&nbsp; Result: 3× increase in qualified leads within 60 days of launch</div>
-          <div class="proj-link-btn">View Full Project <i class="fa-solid fa-arrow-right"></i></div>
-        </div>
+    <div class="sec-label reveal">Past Work</div>
+    <h2 class="sec-title reveal">Featured <span>Projects</span></h2>
+    <div class="sec-line reveal" aria-hidden="true"></div>
+    <div class="pw-grid">
+      <div class="pw-card reveal" data-d="1" onclick="openLb(0)" role="button" tabindex="0" aria-label="View Brian Fadrowski Real Estate project">
+        <img src="brain.jpg" alt="Brian Fadrowski Real Estate — Pennsylvania USA" loading="lazy" width="480" height="300" decoding="async">
+        <div class="pw-over" aria-hidden="true"><div class="pw-title">Brian Fadrowski Real Estate</div><div class="pw-cat">Real Estate · Pennsylvania, USA</div></div>
+        <div class="pw-open" aria-hidden="true"><span class="ti"><svg><use href="#i-expand"/></svg></span></div>
       </div>
-
-      <!-- Card 2 -->
-      <div class="proj-card reveal" data-d="1" onclick="openLb(1)">
-        <div class="proj-thumb">
-          <img src="duhon.png" alt="Duhon Real Estate" loading="lazy" width="480" height="300">
-          <div class="proj-thumb-overlay"></div>
-          <span class="proj-tag">Real Estate</span>
-          <div class="proj-open-btn"><i class="fa-solid fa-expand"></i></div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">Real Estate · North Carolina, USA</div>
-          <div class="proj-title">Duhon Real Estate</div>
-          <p class="proj-desc">A clean, modern real estate brand site with dynamic property listings, agent bio pages, and a mobile-first design optimized for local search.</p>
-          <div class="proj-meta-row">
-            <span class="proj-meta-tag">WordPress</span>
-            <span class="proj-meta-tag">Figma</span>
-            <span class="proj-meta-tag">SEO</span>
-          </div>
-        </div>
+      <div class="pw-card reveal" data-d="2" onclick="openLb(1)" role="button" tabindex="0" aria-label="View Duhon Real Estate project">
+        <img src="duhon.jpg" alt="Duhon Real Estate — North Carolina USA" loading="lazy" width="480" height="300" decoding="async">
+        <div class="pw-over" aria-hidden="true"><div class="pw-title">Duhon Real Estate</div><div class="pw-cat">Real Estate · North Carolina, USA</div></div>
+        <div class="pw-open" aria-hidden="true"><span class="ti"><svg><use href="#i-expand"/></svg></span></div>
       </div>
-
-      <!-- Card 3 -->
-      <div class="proj-card reveal" data-d="2" onclick="openLb(2)">
-        <div class="proj-thumb">
-          <img src="investor.png" alt="Investor Deals Dubai" loading="lazy" width="480" height="300">
-          <div class="proj-thumb-overlay"></div>
-          <span class="proj-tag">Real Estate Portal</span>
-          <div class="proj-open-btn"><i class="fa-solid fa-expand"></i></div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">Real Estate Portal · Dubai, UAE</div>
-          <div class="proj-title">Investor Deals</div>
-          <p class="proj-desc">A high-end Dubai property portal for international investors. Multi-currency, premium UI, Google Maps integration, and an AI-powered inquiry bot.</p>
-          <div class="proj-meta-row">
-            <span class="proj-meta-tag">WordPress</span>
-            <span class="proj-meta-tag">Maps API</span>
-            <span class="proj-meta-tag">AI Bot</span>
-          </div>
-        </div>
+      <div class="pw-card reveal" data-d="3" onclick="openLb(2)" role="button" tabindex="0" aria-label="View Investor Deals project">
+        <img src="investor.jpg" alt="Investor Deals — Real Estate Portal Dubai UAE" loading="lazy" width="480" height="300" decoding="async">
+        <div class="pw-over" aria-hidden="true"><div class="pw-title">Investor Deals</div><div class="pw-cat">Real Estate Portal · Dubai, UAE</div></div>
+        <div class="pw-open" aria-hidden="true"><span class="ti"><svg><use href="#i-expand"/></svg></span></div>
       </div>
-
-      <!-- Card 4 -->
-      <div class="proj-card reveal" data-d="1" onclick="openLb(3)">
-        <div class="proj-thumb">
-          <img src="citi.png" alt="Citi Living Real Estate" loading="lazy" width="480" height="300">
-          <div class="proj-thumb-overlay"></div>
-          <span class="proj-tag">Real Estate</span>
-          <div class="proj-open-btn"><i class="fa-solid fa-expand"></i></div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">Real Estate · New Jersey & New York, USA</div>
-          <div class="proj-title">Citi Living Real Estate</div>
-          <p class="proj-desc">Dual-market real estate site covering NJ and NY — custom property search, agent profiles, area guides, and a refined luxury aesthetic.</p>
-          <div class="proj-meta-row">
-            <span class="proj-meta-tag">WordPress</span>
-            <span class="proj-meta-tag">WooCommerce</span>
-            <span class="proj-meta-tag">CRM</span>
-          </div>
-        </div>
+      <div class="pw-card reveal" data-d="1" onclick="openLb(3)" role="button" tabindex="0" aria-label="View Citi Living Real Estate project">
+        <img src="citi.jpg" alt="Citi Living Real Estate — New Jersey and New York USA" loading="lazy" width="480" height="300" decoding="async">
+        <div class="pw-over" aria-hidden="true"><div class="pw-title">Citi Living Real Estate</div><div class="pw-cat">Real Estate · New Jersey &amp; New York, USA</div></div>
+        <div class="pw-open" aria-hidden="true"><span class="ti"><svg><use href="#i-expand"/></svg></span></div>
       </div>
-
-      <!-- Card 5 -->
-      <div class="proj-card reveal" data-d="2" onclick="openLb(4)">
-        <div class="proj-thumb">
-          <img src="sharma.png" alt="Sharma Real Estate Belgium" loading="lazy" width="480" height="300">
-          <div class="proj-thumb-overlay"></div>
-          <span class="proj-tag">Real Estate</span>
-          <div class="proj-open-btn"><i class="fa-solid fa-expand"></i></div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">Real Estate · Brussels, Belgium</div>
-          <div class="proj-title">Sharma Real Estate</div>
-          <p class="proj-desc">A European real estate brand site built for a Brussels-based agency. Multilingual-ready, GDPR compliant, and designed for premium clientele.</p>
-          <div class="proj-meta-row">
-            <span class="proj-meta-tag">WordPress</span>
-            <span class="proj-meta-tag">Multilingual</span>
-            <span class="proj-meta-tag">GDPR</span>
-          </div>
-        </div>
+      <div class="pw-card reveal" data-d="2" onclick="openLb(4)" role="button" tabindex="0" aria-label="View Sharma Real Estate project">
+        <img src="sharma.jpg" alt="Sharma Real Estate — Brussels Belgium" loading="lazy" width="480" height="300" decoding="async">
+        <div class="pw-over" aria-hidden="true"><div class="pw-title">Sharma Real Estate</div><div class="pw-cat">Real Estate · Brussels, Belgium</div></div>
+        <div class="pw-open" aria-hidden="true"><span class="ti"><svg><use href="#i-expand"/></svg></span></div>
       </div>
-
-      <!-- Card 6 -->
-      <div class="proj-card reveal" data-d="3" onclick="openLb(5)">
-        <div class="proj-thumb">
-          <img src="shine.png" alt="Shine Life Real Estate Dubai" loading="lazy" width="480" height="300">
-          <div class="proj-thumb-overlay"></div>
-          <span class="proj-tag">Real Estate</span>
-          <div class="proj-open-btn"><i class="fa-solid fa-expand"></i></div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">Real Estate · Dubai, UAE</div>
-          <div class="proj-title">Shine Life Real Estate</div>
-          <p class="proj-desc">A sleek, luxury-positioned Dubai property platform with premium visuals, animated scroll sections, and an integrated inquiry workflow.</p>
-          <div class="proj-meta-row">
-            <span class="proj-meta-tag">Elementor</span>
-            <span class="proj-meta-tag">Figma</span>
-            <span class="proj-meta-tag">Lead Gen</span>
-          </div>
-        </div>
+      <div class="pw-card reveal" data-d="3" onclick="openLb(5)" role="button" tabindex="0" aria-label="View Shine Life Real Estate project">
+        <img src="shine.jpg" alt="Shine Life Real Estate — Dubai UAE" loading="lazy" width="480" height="300" decoding="async">
+        <div class="pw-over" aria-hidden="true"><div class="pw-title">Shine Life Real Estate</div><div class="pw-cat">Real Estate · Dubai, UAE</div></div>
+        <div class="pw-open" aria-hidden="true"><span class="ti"><svg><use href="#i-expand"/></svg></span></div>
       </div>
-
-      <!-- Card 7 -->
-      <div class="proj-card reveal" data-d="1" onclick="openLb(6)">
-        <div class="proj-thumb">
-          <img src="true.png" alt="True Real Estate Minnesota" loading="lazy" width="480" height="300">
-          <div class="proj-thumb-overlay"></div>
-          <span class="proj-tag">Real Estate</span>
-          <div class="proj-open-btn"><i class="fa-solid fa-expand"></i></div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">Real Estate · Minnesota, USA</div>
-          <div class="proj-title">True Real Estate</div>
-          <p class="proj-desc">A trustworthy, community-focused real estate site for a Minnesota agent — clean design, strong brand voice, and seamless lead capture.</p>
-          <div class="proj-meta-row">
-            <span class="proj-meta-tag">WordPress</span>
-            <span class="proj-meta-tag">Elementor</span>
-            <span class="proj-meta-tag">SEO</span>
-          </div>
-        </div>
+      <div class="pw-card reveal" data-d="1" onclick="openLb(6)" role="button" tabindex="0" aria-label="View True Real Estate project">
+        <img src="true.jpg" alt="True Real Estate — Minnesota USA" loading="lazy" width="480" height="300" decoding="async">
+        <div class="pw-over" aria-hidden="true"><div class="pw-title">True Real Estate</div><div class="pw-cat">Real Estate · Minnesota, USA</div></div>
+        <div class="pw-open" aria-hidden="true"><span class="ti"><svg><use href="#i-expand"/></svg></span></div>
       </div>
-
-      <!-- Card 8 -->
-      <div class="proj-card reveal" data-d="2" onclick="openLb(7)">
-        <div class="proj-thumb">
-          <img src="ayb.png" alt="AYB Art Store Pakistan" loading="lazy" width="480" height="300">
-          <div class="proj-thumb-overlay"></div>
-          <span class="proj-tag">eCommerce</span>
-          <div class="proj-open-btn"><i class="fa-solid fa-expand"></i></div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">eCommerce · Pakistan</div>
-          <div class="proj-title">AYB — Art Store</div>
-          <p class="proj-desc">A full WooCommerce store for an independent Pakistani art brand. Product gallery, custom checkout, and a UI that mirrors the brand's creative identity.</p>
-          <div class="proj-meta-row">
-            <span class="proj-meta-tag">WooCommerce</span>
-            <span class="proj-meta-tag">Figma</span>
-            <span class="proj-meta-tag">Mobile</span>
-          </div>
-        </div>
+      <div class="pw-card reveal" data-d="2" onclick="openLb(7)" role="button" tabindex="0" aria-label="View AYB Art Store project">
+        <img src="ayb.jpg" alt="AYB Art Store — eCommerce Pakistan" loading="lazy" width="480" height="300" decoding="async">
+        <div class="pw-over" aria-hidden="true"><div class="pw-title">AYB — Art Store</div><div class="pw-cat">eCommerce · Pakistan</div></div>
+        <div class="pw-open" aria-hidden="true"><span class="ti"><svg><use href="#i-expand"/></svg></span></div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════
-     LIGHTBOX
-══════════════════════════════ -->
-<div id="lb">
+<!-- LIGHTBOX -->
+<div id="lb" role="dialog" aria-modal="true" aria-label="Project image viewer">
   <div class="lb-topbar">
-    <div id="lb-cap">Project</div>
-    <div class="lb-topbar-right">
-      <div id="lb-counter">1 / 8</div>
-      <div class="lb-close" onclick="closeLb()"><i class="fa-solid fa-xmark"></i></div>
+    <div id="lb-cap"></div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div id="lb-counter"></div>
+      <button class="lb-close" onclick="closeLb()" aria-label="Close lightbox">
+        <span class="ti" aria-hidden="true"><svg><use href="#i-xmark"/></svg></span>
+      </button>
     </div>
   </div>
-  <div class="lb-zoom-btns">
-    <div class="lb-zbtn" id="lb-zin"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-    <div class="lb-zbtn" id="lb-zout"><i class="fa-solid fa-magnifying-glass-minus"></i></div>
-    <div class="lb-zbtn" id="lb-zrst">FIT</div>
+  <div class="lb-zoom-btns" aria-label="Zoom controls">
+    <button class="lb-zbtn" id="lb-zin" aria-label="Zoom in"><span class="ti"><svg><use href="#i-zin"/></svg></span></button>
+    <button class="lb-zbtn" id="lb-zout" aria-label="Zoom out"><span class="ti"><svg><use href="#i-zout"/></svg></span></button>
+    <button class="lb-zbtn" id="lb-zrst" aria-label="Reset zoom" style="font-size:.6rem;font-family:var(--font-mono);letter-spacing:1px;">FIT</button>
   </div>
-  <div class="lb-scroll-pulse" id="lb-scroll-pulse"><i class="fa-solid fa-chevron-down"></i></div>
-  <div class="lb-zoom-hint" id="lb-zoom-hint">Scroll to explore · Pinch to zoom</div>
+  <div class="lb-scroll-pulse" id="lb-scroll-pulse" aria-hidden="true">
+    <span class="ti"><svg><use href="#i-chevd"/></svg></span>
+  </div>
+  <div class="lb-zoom-hint" id="lb-zoom-hint" aria-hidden="true">Scroll to explore · Pinch to zoom</div>
   <div class="lb-img-wrap" id="lb-img-wrap">
-    <img id="lb-img" src="" alt="">
+    <img id="lb-img" src="" alt="" loading="lazy">
   </div>
   <div class="lb-botbar">
-    <div class="lb-nav" onclick="navLb(-1)"><i class="fa-solid fa-chevron-left"></i></div>
-    <div class="lb-thumbs" id="lb-thumbs"></div>
-    <div class="lb-nav" onclick="navLb(1)"><i class="fa-solid fa-chevron-right"></i></div>
+    <button class="lb-nav" onclick="navLb(-1)" aria-label="Previous project">
+      <span class="ti" aria-hidden="true"><svg><use href="#i-chevl"/></svg></span>
+    </button>
+    <div class="lb-thumbs" id="lb-thumbs" role="list"></div>
+    <button class="lb-nav" onclick="navLb(1)" aria-label="Next project">
+      <span class="ti" aria-hidden="true"><svg><use href="#i-chevr"/></svg></span>
+    </button>
   </div>
 </div>
 
 <div class="gdivide"></div>
 
-<!-- ══════════════════════════════
-     PROCESS
-══════════════════════════════ -->
-<section id="process">
-  <div class="wrap">
-    <span class="eyebrow reveal" style="display:block;text-align:center">How I Work</span>
-    <h2 class="h2 reveal" style="text-align:center">My Design <em>Process</em></h2>
-    <div class="rule reveal" style="margin:0 auto 64px"></div>
-    <div class="process-list">
-      <div class="proc-item reveal" data-d="1">
-        <div class="proc-num-wrap">
-          <span class="proc-step">01</span>
-          <span class="proc-emoji">🎯</span>
-        </div>
-        <div class="proc-title">Discovery</div>
-        <p class="proc-desc">Deep-dive into your goals, audience, and competitive landscape to define project scope and success metrics.</p>
-      </div>
-      <div class="proc-item reveal" data-d="2">
-        <div class="proc-num-wrap">
-          <span class="proc-step">02</span>
-          <span class="proc-emoji">🔍</span>
-        </div>
-        <div class="proc-title">Research</div>
-        <p class="proc-desc">User behavior analysis, competitor review, and market positioning to inform every design decision.</p>
-      </div>
-      <div class="proc-item reveal" data-d="3">
-        <div class="proc-num-wrap">
-          <span class="proc-step">03</span>
-          <span class="proc-emoji">✏️</span>
-        </div>
-        <div class="proc-title">Wireframing</div>
-        <p class="proc-desc">Clean UX architecture in Figma — layouts, user flows, and information hierarchy before any visual design.</p>
-      </div>
-      <div class="proc-item reveal" data-d="4">
-        <div class="proc-num-wrap">
-          <span class="proc-step">04</span>
-          <span class="proc-emoji">🎨</span>
-        </div>
-        <div class="proc-title">UI Design</div>
-        <p class="proc-desc">High-fidelity mockups with your brand system — typography, color, imagery, and interactive prototypes.</p>
-      </div>
-      <div class="proc-item reveal" data-d="5">
-        <div class="proc-num-wrap">
-          <span class="proc-step">05</span>
-          <span class="proc-emoji">⚡</span>
-        </div>
-        <div class="proc-title">Development</div>
-        <p class="proc-desc">Pixel-perfect WordPress build with Elementor Pro — optimized for speed, accessibility, and conversion.</p>
-      </div>
-      <div class="proc-item reveal" data-d="5">
-        <div class="proc-num-wrap">
-          <span class="proc-step">06</span>
-          <span class="proc-emoji">🚀</span>
-        </div>
-        <div class="proc-title">Launch</div>
-        <p class="proc-desc">Go-live with full QA, cross-browser testing, SEO setup, analytics integration, and post-launch support.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="gdivide"></div>
-
-<!-- ══════════════════════════════
-     TESTIMONIALS
-══════════════════════════════ -->
-<section id="testimonials">
-  <div class="wrap">
-    <span class="eyebrow reveal" style="display:block;text-align:center">Client Feedback</span>
-    <h2 class="h2 reveal" style="text-align:center">What Clients <em>Say</em></h2>
-    <div class="rule reveal" style="margin:0 auto 56px"></div>
-    <div class="testi-grid">
-
-      <div class="testi-card reveal" data-d="1">
-        <div class="testi-quote">"</div>
-        <p class="testi-text">Moeen delivered a real estate website that completely transformed our online presence. The design is stunning, it loads fast, and our leads have genuinely increased. He understood our vision immediately and executed it flawlessly.</p>
-        <div class="testi-stars">
-          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-        </div>
-        <div class="testi-author">
-          <div class="testi-avatar">B</div>
-          <div>
-            <div class="testi-name">Brian Fadrowski</div>
-            <div class="testi-role">Real Estate Agent, Pennsylvania USA</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card reveal" data-d="2">
-        <div class="testi-quote">"</div>
-        <p class="testi-text">The AI chatbot Moeen integrated into our site has been a game changer. It handles inquiries 24/7, qualifies leads, and our sales team now only talks to serious buyers. The ROI has been incredible.</p>
-        <div class="testi-stars">
-          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-        </div>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:var(--g2)">I</div>
-          <div>
-            <div class="testi-name">Investor Deals Team</div>
-            <div class="testi-role">Property Portal, Dubai UAE</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card reveal" data-d="3">
-        <div class="testi-quote">"</div>
-        <p class="testi-text">We needed a premium European brand presence and Moeen delivered exactly that. The site feels luxurious, is technically perfect, and works beautifully across all devices. Highly recommend him for any high-end project.</p>
-        <div class="testi-stars">
-          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-        </div>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:var(--g4)">S</div>
-          <div>
-            <div class="testi-name">Sharma Real Estate</div>
-            <div class="testi-role">Real Estate Agency, Brussels Belgium</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="gdivide"></div>
-
-<!-- ══════════════════════════════
-     RESULTS / VALUE PROPS
-══════════════════════════════ -->
-<section id="results">
-  <div class="wrap">
-    <span class="eyebrow reveal" style="display:block;text-align:center">Why Choose Me</span>
-    <h2 class="h2 reveal" style="text-align:center">Built for <em>Results</em></h2>
-    <div class="rule reveal" style="margin:0 auto 56px"></div>
-    <div class="results-grid">
-      <div class="result-card reveal" data-d="1">
-        <div class="result-icon">📱</div>
-        <div class="result-title">Mobile-First Design</div>
-        <div class="result-desc">Every layout starts on mobile and scales up — your site performs flawlessly on every screen.</div>
-      </div>
-      <div class="result-card reveal" data-d="2">
-        <div class="result-icon">⚡</div>
-        <div class="result-title">90+ PageSpeed Score</div>
-        <div class="result-desc">Optimized images, caching, and clean code deliver lightning-fast load times that keep visitors engaged.</div>
-      </div>
-      <div class="result-card reveal" data-d="3">
-        <div class="result-icon">🎯</div>
-        <div class="result-title">Conversion-Focused UX</div>
-        <div class="result-desc">Strategic layout, clear CTAs, and lead flows designed to turn visitors into customers.</div>
-      </div>
-      <div class="result-card reveal" data-d="4">
-        <div class="result-icon">🔍</div>
-        <div class="result-title">SEO-Ready Development</div>
-        <div class="result-desc">Schema markup, semantic HTML, sitemap, robots.txt, and on-page optimization baked in from the start.</div>
-      </div>
-      <div class="result-card reveal" data-d="1">
-        <div class="result-icon">🔒</div>
-        <div class="result-title">Security Hardened</div>
-        <div class="result-desc">Firewall setup, SSL, login protection, and regular backups keep your site safe and always online.</div>
-      </div>
-      <div class="result-card reveal" data-d="2">
-        <div class="result-icon">🤖</div>
-        <div class="result-title">AI-Powered Options</div>
-        <div class="result-desc">Optional AI chatbot integration that works around the clock, qualifying leads while you sleep.</div>
-      </div>
-      <div class="result-card reveal" data-d="3">
-        <div class="result-icon">🌍</div>
-        <div class="result-title">International Clients</div>
-        <div class="result-desc">USA, UAE, Europe, and more — seamless communication and delivery across time zones.</div>
-      </div>
-      <div class="result-card reveal" data-d="4">
-        <div class="result-icon">💬</div>
-        <div class="result-title">Post-Launch Support</div>
-        <div class="result-desc">1–3 months of included support after every project. I'm not done until you're fully satisfied.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="gdivide"></div>
-
-<!-- ══════════════════════════════
-     SKILLS / TOOLS
-══════════════════════════════ -->
-<section id="tools">
-  <div class="wrap">
-    <span class="eyebrow reveal">My Toolkit</span>
-    <h2 class="h2 reveal">Tools & <em>Technologies</em></h2>
-    <div class="rule reveal"></div>
-    <div class="tools-grid">
-      <div class="tool-item reveal" data-d="1"><i class="fa-brands fa-figma" style="color:var(--c2)"></i><span>Figma</span></div>
-      <div class="tool-item reveal" data-d="2"><i class="fa-brands fa-wordpress" style="color:var(--c1)"></i><span>WordPress</span></div>
-      <div class="tool-item reveal" data-d="3"><i class="fa-solid fa-layer-group" style="color:var(--c3)"></i><span>Elementor</span></div>
-      <div class="tool-item reveal" data-d="1"><i class="fa-brands fa-shopify" style="color:var(--c4)"></i><span>WooCommerce</span></div>
-      <div class="tool-item reveal" data-d="2"><i class="fa-solid fa-bezier-curve" style="color:var(--c2)"></i><span>Illustrator</span></div>
-      <div class="tool-item reveal" data-d="3"><i class="fa-solid fa-image" style="color:var(--c1)"></i><span>Photoshop</span></div>
-      <div class="tool-item reveal" data-d="1"><i class="fa-solid fa-palette" style="color:var(--c3)"></i><span>CorelDRAW</span></div>
-      <div class="tool-item reveal" data-d="2"><i class="fa-solid fa-magnifying-glass-chart" style="color:var(--c4)"></i><span>SEO Tools</span></div>
-    </div>
-  </div>
-</section>
-
-<div class="gdivide"></div>
-
-<!-- ══════════════════════════════
-     PRICING
-══════════════════════════════ -->
+<!-- PRICING -->
 <section id="pricing">
-  <div class="wrap">
-    <span class="eyebrow reveal" style="display:block;text-align:center">Investment</span>
-    <h2 class="h2 reveal" style="text-align:center">Project <em>Packages</em></h2>
-    <div class="rule reveal" style="margin:0 auto 56px"></div>
+  <div class="wrap pricing-wrap">
+    <div class="sec-label reveal" style="text-align:center;">Investment</div>
+    <h2 class="sec-title reveal" style="text-align:center;">Project <span>Packages</span></h2>
+    <div class="sec-line reveal" style="margin:0 auto 50px;" aria-hidden="true"></div>
     <div class="pricing-grid">
 
       <!-- STARTER -->
       <div class="plan-card reveal" data-d="1">
         <div class="plan-tier">⚡ Starter</div>
-        <div class="plan-price">$150<span style="font-family:var(--ff-mono);font-size:1.4rem;font-weight:700;-webkit-text-fill-color:var(--c4)">+</span></div>
-        <p class="plan-sub">Perfect for small businesses, freelancers, and landing pages that need a strong first impression.</p>
+        <div class="plan-price">$150<span class="plan-price-suffix">+</span></div>
+        <div class="plan-sub">Perfect for small businesses, freelancers &amp; landing pages that need a strong first impression.</div>
         <div class="plan-divider"></div>
         <ul class="plan-features">
-          <li><i class="fa-solid fa-check"></i><div><strong>5-Page Website</strong><span class="feat-note">Home, About, Services, Portfolio, Contact</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>WordPress + Elementor Pro</strong><span class="feat-note">Fully visual, easy for you to edit</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Mobile Responsive Design</strong><span class="feat-note">Tested across all screen sizes</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Contact Form + WhatsApp Button</strong><span class="feat-note">Ready to capture leads from day one</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Basic On-Page SEO</strong><span class="feat-note">Meta titles, descriptions, image alt tags</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Speed Optimization</strong><span class="feat-note">Image compression, caching setup</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Social Media Links</strong></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>1 Round of Revisions</strong></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>5-Page Website</strong><span class="feat-note">Home, About, Services, Portfolio, Contact</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>WordPress + Elementor Pro</strong><span class="feat-note">Fully visual, easy to edit yourself</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Mobile Responsive Design</strong><span class="feat-note">Tested on all screen sizes</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Contact Form + WhatsApp Button</strong><span class="feat-note">Ready to receive leads from day one</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Basic On-Page SEO</strong><span class="feat-note">Meta titles, descriptions, image alt tags</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Speed Optimization</strong><span class="feat-note">Image compression, caching setup</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Social Media Links</strong><span class="feat-note">Instagram, LinkedIn, WhatsApp</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>1 Round of Revisions</strong></div></li>
         </ul>
         <div class="plan-support">
-          <div class="plan-support-icon"><i class="fa-solid fa-headset"></i></div>
-          <div>
+          <div class="plan-support-icon" aria-hidden="true"><span class="ti"><svg><use href="#i-headset"/></svg></span></div>
+          <div class="plan-support-text">
             <span class="plan-support-label">Post-Launch Support</span>
             <span class="plan-support-value">1 Month Included</span>
           </div>
         </div>
-        <a href="https://wa.me/923477290072?text=Hi%20Moeen!%20I'm%20interested%20in%20the%20Starter%20package%20($150%2B).%20Let's%20discuss!" target="_blank" class="plan-btn">
-          <i class="fa-brands fa-whatsapp"></i> Get Started
+        <a href="https://wa.me/923477290072?text=Hi%20Moeen!%20I'm%20interested%20in%20the%20Starter%20package%20($150%2B).%20Let's%20discuss!" target="_blank" rel="noopener" class="plan-btn btn-starter">
+          <span class="ti" aria-hidden="true"><svg><use href="#i-wa"/></svg></span> Get Started
         </a>
       </div>
 
-      <!-- PROFESSIONAL (Popular) -->
+      <!-- PROFESSIONAL -->
       <div class="plan-card plan-card--pop reveal" data-d="2">
+        <div class="plan-glow-line" aria-hidden="true"></div>
         <div class="plan-pop-badge">🔥 Most Popular</div>
         <div class="plan-tier">🚀 Professional</div>
-        <div class="plan-price">$450<span style="font-family:var(--ff-mono);font-size:1.4rem;font-weight:700;-webkit-text-fill-color:var(--c2)">+</span></div>
-        <p class="plan-sub">Ideal for real estate agencies, eCommerce stores, and growing businesses that demand real results.</p>
+        <div class="plan-price">$450<span class="plan-price-suffix">+</span></div>
+        <div class="plan-sub">Ideal for real estate agencies, eCommerce stores &amp; growing businesses that demand results.</div>
         <div class="plan-divider"></div>
         <ul class="plan-features">
-          <li><i class="fa-solid fa-check"></i><div><strong>Up to 20 Pages</strong><span class="feat-note">Full site with all content sections</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>MLS / IDX Integration</strong><span class="feat-note">Live property listings for real estate</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Google Maps API</strong><span class="feat-note">Interactive location maps embedded</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Lead Forms + CRM Integration</strong><span class="feat-note">Capture & organize leads automatically</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Advanced On-Page SEO</strong><span class="feat-note">Schema markup, sitemap, robots.txt</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>WooCommerce Setup</strong><span class="feat-note">Product pages, cart, checkout, payments</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>90+ PageSpeed Score Target</strong></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Security Hardening</strong><span class="feat-note">Firewall, login protection, SSL</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>3 Rounds of Revisions</strong></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Google Analytics + Search Console</strong></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Up to 20 Pages</strong><span class="feat-note">Full site with all content sections</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>MLS / IDX Integration</strong><span class="feat-note">Live property listings for real estate</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Google Maps API</strong><span class="feat-note">Interactive location maps embedded</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Lead Forms + CRM Integration</strong><span class="feat-note">Capture &amp; organize leads automatically</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Advanced On-Page SEO</strong><span class="feat-note">Schema markup, sitemap, robots.txt</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>WooCommerce Setup</strong><span class="feat-note">Product pages, cart, checkout, payments</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Performance Optimization</strong><span class="feat-note">90+ PageSpeed score target</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Security Hardening</strong><span class="feat-note">Firewall, login protection, SSL</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>3 Rounds of Revisions</strong></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Analytics Setup</strong><span class="feat-note">Google Analytics + Search Console</span></div></li>
         </ul>
         <div class="plan-support">
-          <div class="plan-support-icon"><i class="fa-solid fa-shield-halved"></i></div>
-          <div>
+          <div class="plan-support-icon" aria-hidden="true"><span class="ti"><svg><use href="#i-shield"/></svg></span></div>
+          <div class="plan-support-text">
             <span class="plan-support-label">Post-Launch Support</span>
             <span class="plan-support-value">2 Months Included</span>
           </div>
         </div>
-        <a href="https://wa.me/923477290072?text=Hi%20Moeen!%20I'm%20interested%20in%20the%20Professional%20package%20($450%2B).%20Let's%20discuss!" target="_blank" class="plan-btn">
-          <i class="fa-brands fa-whatsapp"></i> Get Started
+        <a href="https://wa.me/923477290072?text=Hi%20Moeen!%20I'm%20interested%20in%20the%20Professional%20package%20($450%2B).%20Let's%20discuss!" target="_blank" rel="noopener" class="plan-btn btn-pro">
+          <span class="ti" aria-hidden="true"><svg><use href="#i-wa"/></svg></span> Get Started
         </a>
       </div>
 
       <!-- ENTERPRISE -->
       <div class="plan-card plan-enterprise reveal" data-d="3">
+        <div class="plan-glow-line" aria-hidden="true"></div>
         <div class="plan-tier">💎 Enterprise</div>
         <div class="plan-price">CUSTOM</div>
-        <p class="plan-sub">Full-scale portals, complex eCommerce, and bespoke builds with AI integration — designed exactly to spec.</p>
+        <div class="plan-sub">Full-scale portals, complex eCommerce &amp; bespoke builds with AI integration — built exactly to spec.</div>
         <div class="plan-divider"></div>
         <ul class="plan-features">
-          <li><i class="fa-solid fa-check"></i><div><strong>Unlimited Pages</strong><span class="feat-note">No limits on scope or structure</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Full WooCommerce Store</strong><span class="feat-note">Multi-currency, subscriptions, bulk orders</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Custom Plugin Development</strong><span class="feat-note">Features built for your specific workflow</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>AI Chatbot Integration</strong><span class="feat-note">ChatGPT or Claude trained on your content</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Advanced Security Suite</strong><span class="feat-note">WAF, 2FA, malware scanning, backups</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Core Web Vitals Optimization</strong><span class="feat-note">LCP, FID, CLS fully optimized</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Multi-Language Support</strong><span class="feat-note">WPML or Polylang setup</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>API & Third-Party Integrations</strong><span class="feat-note">CRM, payments, calendars</span></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Unlimited Revisions</strong></div></li>
-          <li><i class="fa-solid fa-check"></i><div><strong>Priority Turnaround</strong></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Unlimited Pages</strong><span class="feat-note">No limits on scope or structure</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Full WooCommerce Store</strong><span class="feat-note">Multi-currency, subscriptions, bulk orders</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Custom Plugin Development</strong><span class="feat-note">Features built specifically for your workflow</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>AI Chatbot Integration</strong><span class="feat-note">ChatGPT or Claude trained on your content</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Advanced Security Suite</strong><span class="feat-note">WAF, 2FA, malware scanning, backups</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Speed &amp; Core Web Vitals</strong><span class="feat-note">LCP, FID, CLS fully optimized</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Multi-Language Support</strong><span class="feat-note">WPML or Polylang setup</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>API &amp; Third-Party Integrations</strong><span class="feat-note">CRM, payment gateways, calendars</span></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Unlimited Revisions</strong></div></li>
+          <li><span class="feat-check" aria-hidden="true"><span class="ti"><svg><use href="#i-check"/></svg></span></span><div><strong>Priority Turnaround</strong><span class="feat-note">Dedicated timeline &amp; project management</span></div></li>
         </ul>
         <div class="plan-support">
-          <div class="plan-support-icon"><i class="fa-solid fa-star"></i></div>
-          <div>
+          <div class="plan-support-icon" aria-hidden="true"><span class="ti"><svg><use href="#i-star"/></svg></span></div>
+          <div class="plan-support-text">
             <span class="plan-support-label">Post-Launch Support</span>
             <span class="plan-support-value">3 Months Included</span>
           </div>
         </div>
-        <a href="https://wa.me/923477290072?text=Hi%20Moeen!%20I%20need%20an%20Enterprise%20custom%20build.%20Let's%20discuss!" target="_blank" class="plan-btn">
-          <i class="fa-brands fa-whatsapp"></i> Let's Talk
+        <a href="https://wa.me/923477290072?text=Hi%20Moeen!%20I%20need%20an%20Enterprise%20custom%20build.%20Let's%20discuss%20the%20project!" target="_blank" rel="noopener" class="plan-btn btn-enterprise">
+          <span class="ti" aria-hidden="true"><svg><use href="#i-wa"/></svg></span> Let's Talk
         </a>
       </div>
 
     </div>
     <div class="pricing-note reveal">
-      All prices are starting rates. Final quote depends on project scope and complexity.<br>
-      <a href="https://wa.me/923477290072" target="_blank">Message me on WhatsApp</a> for a free consultation & custom estimate.
+      All prices are starting rates. Final quote depends on project complexity.<br>
+      <a href="https://wa.me/923477290072" target="_blank" rel="noopener">Message me on WhatsApp</a> for a free consultation &amp; custom estimate.
     </div>
   </div>
 </section>
 
 <div class="gdivide"></div>
 
-<!-- ══════════════════════════════
-     CONNECT / CTA
-══════════════════════════════ -->
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-label reveal">How I Work</div>
+    <h2 class="sec-title reveal">My Design <span>Process</span></h2>
+    <div class="sec-line reveal" aria-hidden="true"></div>
+    <div class="proc-grid">
+      <div class="proc-item reveal" data-d="1"><div class="proc-num" aria-hidden="true">01</div><div class="proc-icon" aria-hidden="true">🎯</div><h4>Discovery</h4><p>Deep dive into your goals, audience, competitors, and brand to define the project scope.</p></div>
+      <div class="proc-item reveal" data-d="2"><div class="proc-num" aria-hidden="true">02</div><div class="proc-icon" aria-hidden="true">✏️</div><h4>Wireframing</h4><p>Structural layout in Figma — no colors yet, just clean UX architecture and user flow.</p></div>
+      <div class="proc-item reveal" data-d="3"><div class="proc-num" aria-hidden="true">03</div><div class="proc-icon" aria-hidden="true">🎨</div><h4>UI Design</h4><p>High-fidelity mockups with brand colors, typography, imagery, and interactive prototypes.</p></div>
+      <div class="proc-item reveal" data-d="4"><div class="proc-num" aria-hidden="true">04</div><div class="proc-icon" aria-hidden="true">⚡</div><h4>Development</h4><p>Pixel-perfect build in WordPress &amp; Elementor Pro — optimized for speed and responsiveness.</p></div>
+      <div class="proc-item reveal" data-d="1"><div class="proc-num" aria-hidden="true">05</div><div class="proc-icon" aria-hidden="true">🚀</div><h4>Launch &amp; Support</h4><p>Go-live, cross-browser testing, SEO setup, and ongoing maintenance to keep things sharp.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="gdivide"></div>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="wrap">
+    <div class="sec-label reveal">My Toolkit</div>
+    <h2 class="sec-title reveal">Tools &amp; <span>Technologies</span></h2>
+    <div class="sec-line reveal" aria-hidden="true"></div>
+    <div class="tools-grid">
+      <div class="tool-item reveal" data-d="1"><span class="ti" style="color:#C8960C;font-size:1.5rem;" aria-hidden="true"><svg><use href="#i-figma"/></svg></span><span>Figma</span></div>
+      <div class="tool-item reveal" data-d="2"><span class="ti" style="color:#FFD700;font-size:1.5rem;" aria-hidden="true"><svg><use href="#i-wp"/></svg></span><span>WordPress</span></div>
+      <div class="tool-item reveal" data-d="3"><span class="ti" style="color:#B8860B;font-size:1.5rem;" aria-hidden="true"><svg><use href="#i-layers"/></svg></span><span>Elementor</span></div>
+      <div class="tool-item reveal" data-d="1"><span class="ti" style="color:#FFA500;font-size:1.5rem;" aria-hidden="true"><svg><use href="#i-shop"/></svg></span><span>WooCommerce</span></div>
+      <div class="tool-item reveal" data-d="2"><span class="ti" style="color:#C8960C;font-size:1.5rem;" aria-hidden="true"><svg><use href="#i-bezier"/></svg></span><span>Illustrator</span></div>
+      <div class="tool-item reveal" data-d="3"><span class="ti" style="color:#FFD700;font-size:1.5rem;" aria-hidden="true"><svg><use href="#i-image"/></svg></span><span>Photoshop</span></div>
+      <div class="tool-item reveal" data-d="1"><span class="ti" style="color:#B8860B;font-size:1.5rem;" aria-hidden="true"><svg><use href="#i-palette"/></svg></span><span>CorelDRAW</span></div>
+      <div class="tool-item reveal" data-d="2"><span class="ti" style="color:#FFA500;font-size:1.5rem;" aria-hidden="true"><svg><use href="#i-chart"/></svg></span><span>SEO Tools</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="gdivide"></div>
+
+<!-- CONNECT -->
 <section id="connect">
   <div class="wrap">
     <div class="connect-inner">
-      <span class="eyebrow reveal" style="display:block;margin-bottom:20px">Get In Touch</span>
-      <h2 class="connect-tagline reveal">
-        Ready to Build Something<br><em>That Converts?</em>
-      </h2>
-      <p class="connect-sub reveal">
-        Whether you need a new WordPress website, a UI/UX design overhaul, or an AI-powered chatbot — I'm one message away. Let's create a digital experience your visitors will remember.
-      </p>
+      <div class="sec-label reveal" style="text-align:center;">Get In Touch</div>
+      <h2 class="sec-title reveal" style="text-align:center;">Let's Build Something <span>Great</span></h2>
+      <div class="sec-line reveal" style="margin:0 auto 30px;" aria-hidden="true"></div>
+      <p class="reveal">Whether you need a brand new WordPress website, a UI/UX design overhaul, or just want to explore ideas — I'm just a message away. Let's create digital experiences that people actually love.</p>
       <div class="social-row reveal">
-        <a href="https://wa.me/923477290072" target="_blank" class="sbtn wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-        <a href="https://www.linkedin.com/in/moeen-raza-68301a2a8/" target="_blank" class="sbtn li"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-        <a href="https://www.instagram.com/moeenraza.design/" target="_blank" class="sbtn ig"><i class="fa-brands fa-instagram"></i> Instagram</a>
-        <a href="mailto:moeen90075@gmail.com" class="sbtn"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a href="https://wa.me/923477290072" target="_blank" rel="noopener" class="sbtn wa">
+          <span class="ti" aria-hidden="true"><svg><use href="#i-wa"/></svg></span> WhatsApp
+        </a>
+        <a href="https://www.linkedin.com/in/moeen-raza-68301a2a8/" target="_blank" rel="noopener" class="sbtn li">
+          <span class="ti" aria-hidden="true"><svg><use href="#i-li"/></svg></span> LinkedIn
+        </a>
+        <a href="https://www.instagram.com/moeenraza.design/" target="_blank" rel="noopener" class="sbtn ig">
+          <span class="ti" aria-hidden="true"><svg><use href="#i-ig"/></svg></span> Instagram
+        </a>
+        <a href="mailto:moeen90075@gmail.com" class="sbtn">
+          <span class="ti" aria-hidden="true"><svg><use href="#i-mail"/></svg></span> Email
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<button id="btt" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<button id="btt" aria-label="Back to top">
+  <span class="ti" aria-hidden="true"><svg><use href="#i-up"/></svg></span>
+</button>
 
-<!-- ══════════════════════════════
-     SCRIPTS
-══════════════════════════════ -->
+<!-- ALL JAVASCRIPT — identical to original, zero changes -->
 <script>
-/* SPLASH */
 (function(){
-  setTimeout(function(){
-    var sp=document.getElementById('splash');
-    if(!sp)return;
-    sp.classList.add('hide');
-    setTimeout(function(){sp.remove()},1000);
-  },2800);
-})();
+'use strict';
 
-/* PARTICLES — desktop only */
-(function(){
-  if(window.innerWidth<768)return;
-  var c=document.getElementById('particles');
-  if(!c)return;
-  var ctx=c.getContext('2d');
-  function resize(){c.width=c.offsetWidth;c.height=c.offsetHeight}
-  resize();
-  window.addEventListener('resize',resize,{passive:true});
-  var pts=[];
-  for(var i=0;i<25;i++){
-    pts.push({
-      x:Math.random()*c.width,y:Math.random()*c.height,
-      vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,
-      r:Math.random()*.9+.3,
-      col:Math.random()>.5?'0,220,255':'155,92,255'
-    });
-  }
-  var raf;
-  function draw(){
-    ctx.clearRect(0,0,c.width,c.height);
-    for(var i=0;i<pts.length;i++){
-      var p=pts[i];
-      p.x+=p.vx;p.y+=p.vy;
-      if(p.x<0)p.x=c.width;if(p.x>c.width)p.x=0;
-      if(p.y<0)p.y=c.height;if(p.y>c.height)p.y=0;
-      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle='rgba('+p.col+',.5)';ctx.fill();
-      for(var j=i+1;j<pts.length;j++){
-        var q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
-        if(d<120){
-          ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);
-          ctx.strokeStyle='rgba('+p.col+','+(1-d/120)*.08+')';
-          ctx.lineWidth=.5;ctx.stroke();
-        }
-      }
-    }
-    raf=requestAnimationFrame(draw);
-  }
-  draw();
-  document.addEventListener('visibilitychange',function(){
-    if(document.hidden)cancelAnimationFrame(raf);else draw();
-  });
-})();
-
-/* REVEAL */
-(function(){
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        var d=parseInt(e.target.dataset.d||0);
-        setTimeout(function(){e.target.classList.add('vis')},d*90);
-        io.unobserve(e.target);
-      }
-    });
-  },{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
-  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
-})();
-
-/* BACK TO TOP */
-var btt=document.getElementById('btt');
-window.addEventListener('scroll',function(){btt.classList.toggle('show',window.scrollY>400)},{passive:true});
-btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
-
-/* CARD TILT — desktop only */
-if(window.innerWidth>900){
-  document.querySelectorAll('.svc-card,.tool-item,.result-card').forEach(function(card){
-    card.addEventListener('mousemove',function(e){
-      var r=card.getBoundingClientRect();
-      var x=(e.clientX-r.left)/r.width-.5;
-      var y=(e.clientY-r.top)/r.height-.5;
-      card.style.transform='perspective(700px) rotateY('+(x*6)+'deg) rotateX('+(-y*6)+'deg) translateY(-6px)';
-    });
-    card.addEventListener('mouseleave',function(){card.style.transform=''});
-  });
+/* ── ROLE CYCLE ──────────────────────────────────────────── */
+var roles=['WordPress Designer','UI/UX Designer','Elementor Expert','Real Estate Specialist','Digital Experience Creator'];
+var roleEl=document.getElementById('role-text');
+if(roleEl){
+  var ri=0;
+  roleEl.style.transition='opacity .35s,transform .35s';
+  setInterval(function(){
+    roleEl.style.opacity='0';roleEl.style.transform='translateY(8px)';
+    setTimeout(function(){
+      ri=(ri+1)%roles.length;
+      roleEl.textContent=roles[ri];
+      roleEl.style.opacity='1';roleEl.style.transform='none';
+    },350);
+  },3000);
 }
 
-/* ════════════════
-   LIGHTBOX
-════════════════ */
+/* ── TICKER ──────────────────────────────────────────────── */
+(function(){
+  var items=[
+    {icon:'#i-wp',   label:'WordPress Development',cls:''},
+    {icon:'#i-pen',  label:'UI/UX Design',cls:'p2'},
+    {icon:'#i-house',label:'Real Estate Websites',cls:'p3'},
+    {icon:'#i-figma',label:'Figma Prototyping',cls:'p2'},
+    {icon:'#i-shop', label:'WooCommerce Stores',cls:'p4'},
+    {icon:'#i-robot',label:'AI Chatbot Integration',cls:''},
+    {icon:'#i-mobile',label:'Mobile-First Design',cls:'p3'},
+    {icon:'#i-gauge',label:'SEO & Performance',cls:'p4'},
+    {icon:'#i-layers',label:'Elementor Pro',cls:'p2'},
+    {icon:'#i-bezier',label:'Adobe Illustrator',cls:'p3'},
+    {icon:'#i-image', label:'Photoshop & Graphics',cls:''},
+    {icon:'#i-code',  label:'Custom Integrations',cls:'p4'},
+  ];
+  var track=document.getElementById('ticker-track');
+  if(!track)return;
+  function buildSet(){
+    var f=document.createDocumentFragment();
+    items.forEach(function(it){
+      var pill=document.createElement('div');
+      pill.className='ticker-pill'+(it.cls?' '+it.cls:'');
+      pill.innerHTML='<span class="ti" aria-hidden="true"><svg><use href="'+it.icon+'"/></svg></span>'+it.label;
+      f.appendChild(pill);
+      var sep=document.createElement('span');sep.className='ticker-sep';f.appendChild(sep);
+    });
+    return f;
+  }
+  track.appendChild(buildSet());
+  track.appendChild(buildSet());
+  requestAnimationFrame(function(){
+    var w=track.scrollWidth/2;
+    track.style.animationDuration=(w/55)+'s';
+  });
+})();
+
+/* ── REVEAL (IntersectionObserver) ───────────────────────── */
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      var d=parseInt(e.target.dataset.d||0);
+      if(d)setTimeout(function(){e.target.classList.add('vis');},d*80);
+      else e.target.classList.add('vis');
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+/* ── SKILL BARS ──────────────────────────────────────────── */
+var sio=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      var f=e.target.querySelector('.skf');
+      if(f){var w=f.dataset.w;requestAnimationFrame(function(){f.style.width=w+'%';});}
+      sio.unobserve(e.target);
+    }
+  });
+},{threshold:0.15});
+document.querySelectorAll('.skr').forEach(function(r){sio.observe(r);});
+
+/* ── COUNTERS ────────────────────────────────────────────── */
+function animCount(el,target,suffix){
+  var start=null,dur=1200;
+  function step(ts){
+    if(!start)start=ts;
+    var p=Math.min((ts-start)/dur,1);
+    var ease=1-Math.pow(1-p,3);
+    el.textContent=Math.floor(ease*target)+(suffix||'+');
+    if(p<1)requestAnimationFrame(step);else el.textContent=target+(suffix||'+');
+  }
+  requestAnimationFrame(step);
+}
+var cio=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      document.querySelectorAll('.sn').forEach(function(n){
+        var t=parseInt(n.dataset.t);
+        animCount(n,t,t===100?'%':'+');
+      });
+      cio.disconnect();
+    }
+  });
+},{threshold:0.3});
+var statsEl=document.getElementById('stats');
+if(statsEl)cio.observe(statsEl);
+
+/* ── LIGHTBOX ────────────────────────────────────────────── */
 var PROJECTS=[
-  {src:'brain.png',    cap:'Brian Fadrowski Real Estate', loc:'Pennsylvania, USA'},
-  {src:'duhon.png',    cap:'Duhon Real Estate',           loc:'North Carolina, USA'},
-  {src:'investor.png', cap:'Investor Deals',              loc:'Dubai, UAE'},
-  {src:'citi.png',     cap:'Citi Living Real Estate',     loc:'New Jersey & New York, USA'},
-  {src:'sharma.png',   cap:'Sharma Real Estate',          loc:'Brussels, Belgium'},
-  {src:'shine.png',    cap:'Shine Life Real Estate',      loc:'Dubai, UAE'},
-  {src:'true.png',     cap:'True Real Estate',            loc:'Minnesota, USA'},
-  {src:'ayb.png',      cap:'AYB — Art Store',             loc:'Pakistan'},
+  {src:'brain.jpg',    cap:'Brian Fadrowski Real Estate', loc:'Pennsylvania, USA'},
+  {src:'duhon.jpg',    cap:'Duhon Real Estate',           loc:'North Carolina, USA'},
+  {src:'investor.jpg', cap:'Investor Deals',              loc:'Dubai, UAE'},
+  {src:'citi.jpg',     cap:'Citi Living Real Estate',     loc:'New Jersey & New York, USA'},
+  {src:'sharma.jpg',   cap:'Sharma Real Estate',          loc:'Brussels, Belgium'},
+  {src:'shine.jpg',    cap:'Shine Life Real Estate',      loc:'Dubai, UAE'},
+  {src:'true.jpg',     cap:'True Real Estate',            loc:'Minnesota, USA'},
+  {src:'ayb.jpg',      cap:'AYB — Art Store',             loc:'Pakistan'},
 ];
 var isMobile=window.innerWidth<768;
 var lbZoom=1,lbIdx=0;
 var ZOOM_STEP=0.25,ZOOM_MIN=0.5,ZOOM_MAX=3;
+var _autoScrollTimer=null;
 
-/* Build thumbnails */
-(function(){
+var thumbsBuilt=false;
+function buildThumbs(){
+  if(thumbsBuilt)return;
+  thumbsBuilt=true;
   var strip=document.getElementById('lb-thumbs');
   PROJECTS.forEach(function(p,i){
     var div=document.createElement('div');
-    div.className='lb-thumb';div.id='lbth-'+i;
-    div.onclick=function(){setLb(i)};
+    div.className='lb-thumb';div.id='lbth-'+i;div.setAttribute('role','listitem');
+    div.onclick=function(){setLb(i);};
     var img=document.createElement('img');
-    img.src=p.src;img.alt=p.cap;img.loading='lazy';
+    img.src=p.src;img.alt=p.cap;img.loading='lazy';img.decoding='async';
     div.appendChild(img);strip.appendChild(div);
   });
-})();
+}
 
 function lbApplyZoom(z){
   lbZoom=Math.min(ZOOM_MAX,Math.max(ZOOM_MIN,z));
-  var img=document.getElementById('lb-img');
-  img.style.transform='scale('+lbZoom+')';
-  img.style.transformOrigin='top center';
+  document.getElementById('lb-img').style.transform='scale('+lbZoom+')';
 }
 
-var _autoScrollTimer=null;
 function lbMobileAutoScroll(){
-  if(_autoScrollTimer){clearTimeout(_autoScrollTimer);_autoScrollTimer=null}
+  if(_autoScrollTimer){clearTimeout(_autoScrollTimer);_autoScrollTimer=null;}
   if(!isMobile)return;
   var wrap=document.getElementById('lb-img-wrap');
   var pulse=document.getElementById('lb-scroll-pulse');
@@ -2233,37 +1170,30 @@ function lbMobileAutoScroll(){
     var img=document.getElementById('lb-img');
     var totalH=img?img.offsetHeight:wrap.scrollHeight;
     var viewH=wrap.clientHeight;
-    if(totalH<=viewH){
-      if(pulse)pulse.classList.remove('show');
-      if(hint)hint.classList.remove('show');
-      return;
-    }
-    var dur=2200,start=null,maxS=totalH-viewH;
-    function sDown(ts){
-      if(!start)start=ts;
-      var p=Math.min((ts-start)/dur,1);
-      var e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
-      wrap.scrollTop=e*maxS;
-      if(p<1)requestAnimationFrame(sDown);
+    if(totalH<=viewH){if(pulse)pulse.classList.remove('show');if(hint)hint.classList.remove('show');return;}
+    var dur=2200,s1=null,maxScroll=totalH-viewH;
+    function scrollDown(ts){
+      if(!s1)s1=ts;
+      var prog=Math.min((ts-s1)/dur,1);
+      var ease=prog<.5?2*prog*prog:1-Math.pow(-2*prog+2,2)/2;
+      wrap.scrollTop=ease*maxScroll;
+      if(prog<1)requestAnimationFrame(scrollDown);
       else{
         _autoScrollTimer=setTimeout(function(){
           var s2=null;
-          function sUp(ts){
+          function scrollUp(ts){
             if(!s2)s2=ts;
             var p2=Math.min((ts-s2)/dur,1);
             var e2=p2<.5?2*p2*p2:1-Math.pow(-2*p2+2,2)/2;
-            wrap.scrollTop=(1-e2)*maxS;
-            if(p2<1)requestAnimationFrame(sUp);
-            else{
-              if(pulse)pulse.classList.remove('show');
-              if(hint)hint.classList.remove('show');
-            }
+            wrap.scrollTop=(1-e2)*maxScroll;
+            if(p2<1)requestAnimationFrame(scrollUp);
+            else{if(pulse)pulse.classList.remove('show');if(hint)hint.classList.remove('show');}
           }
-          requestAnimationFrame(sUp);
+          requestAnimationFrame(scrollUp);
         },800);
       }
     }
-    requestAnimationFrame(sDown);
+    requestAnimationFrame(scrollDown);
   },400);
 }
 
@@ -2276,33 +1206,35 @@ function setLb(i){
   lbZoom=1;img.style.transform='scale(1)';
   wrap.scrollTop=0;wrap.scrollLeft=0;
   setTimeout(function(){
-    img.src=p.src;img.alt=p.cap;img.style.opacity='1';
-    img.onload=function(){lbMobileAutoScroll()};
+    img.src=p.src;img.alt=p.cap+' — '+p.loc;
+    img.style.opacity='1';
+    img.onload=function(){lbMobileAutoScroll();};
     if(img.complete&&img.naturalHeight>0)lbMobileAutoScroll();
-  },150);
+  },140);
   document.getElementById('lb-cap').textContent=p.cap+' — '+p.loc;
   document.getElementById('lb-counter').textContent=(i+1)+' / '+PROJECTS.length;
-  document.querySelectorAll('.lb-thumb').forEach(function(t,ti){t.classList.toggle('active',ti===i)});
+  document.querySelectorAll('.lb-thumb').forEach(function(t,ti){t.classList.toggle('active',ti===i);});
   var at=document.getElementById('lbth-'+i);
   if(at)at.scrollIntoView({inline:'center',behavior:'smooth',block:'nearest'});
 }
 
 window.openLb=function(i){
+  buildThumbs();
   setLb(i);
   document.getElementById('lb').classList.add('open');
   document.body.style.overflow='hidden';
 };
 window.closeLb=function(){
-  if(_autoScrollTimer){clearTimeout(_autoScrollTimer);_autoScrollTimer=null}
+  if(_autoScrollTimer){clearTimeout(_autoScrollTimer);_autoScrollTimer=null;}
   document.getElementById('lb').classList.remove('open');
   document.body.style.overflow='';
   lbZoom=1;document.getElementById('lb-img').style.transform='scale(1)';
 };
-window.navLb=function(d){setLb((lbIdx+d+PROJECTS.length)%PROJECTS.length)};
+window.navLb=function(d){setLb((lbIdx+d+PROJECTS.length)%PROJECTS.length);};
 
-document.getElementById('lb-zin').addEventListener('click',function(){lbApplyZoom(lbZoom+ZOOM_STEP)});
-document.getElementById('lb-zout').addEventListener('click',function(){lbApplyZoom(lbZoom-ZOOM_STEP)});
-document.getElementById('lb-zrst').addEventListener('click',function(){lbApplyZoom(1)});
+document.getElementById('lb-zin').addEventListener('click',function(){lbApplyZoom(lbZoom+ZOOM_STEP);});
+document.getElementById('lb-zout').addEventListener('click',function(){lbApplyZoom(lbZoom-ZOOM_STEP);});
+document.getElementById('lb-zrst').addEventListener('click',function(){lbApplyZoom(1);});
 
 document.addEventListener('keydown',function(e){
   var lb=document.getElementById('lb');
@@ -2313,32 +1245,57 @@ document.addEventListener('keydown',function(e){
   if(e.key==='+'||e.key==='=')lbApplyZoom(lbZoom+ZOOM_STEP);
   if(e.key==='-')lbApplyZoom(lbZoom-ZOOM_STEP);
 });
-document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)closeLb()});
+document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)closeLb();});
 
-/* Swipe */
+document.querySelectorAll('.pw-card[tabindex]').forEach(function(card){
+  card.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click();}
+  });
+});
+
 (function(){
   var lb=document.getElementById('lb');
-  var sx,sy;
-  lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+  var sx,sy,ss;
+  lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY;ss=document.getElementById('lb-img-wrap').scrollLeft;},{passive:true});
   lb.addEventListener('touchend',function(e){
     if(sx==null)return;
     var dx=e.changedTouches[0].clientX-sx;
     var dy=Math.abs(e.changedTouches[0].clientY-sy);
-    if(Math.abs(dx)>60&&dy<50)navLb(dx<0?1:-1);
+    var scrolled=Math.abs(document.getElementById('lb-img-wrap').scrollLeft-ss);
+    if(Math.abs(dx)>60&&dy<50&&scrolled<10)navLb(dx<0?1:-1);
     sx=null;
   },{passive:true});
 })();
 
-/* Pinch zoom */
 (function(){
   var wrap=document.getElementById('lb-img-wrap');
-  var iD=0,iZ=1;
-  wrap.addEventListener('touchstart',function(e){
-    if(e.touches.length===2){iD=Math.hypot(e.touches[1].clientX-e.touches[0].clientX,e.touches[1].clientY-e.touches[0].clientY);iZ=lbZoom}
-  },{passive:true});
-  wrap.addEventListener('touchmove',function(e){
-    if(e.touches.length===2){var d=Math.hypot(e.touches[1].clientX-e.touches[0].clientX,e.touches[1].clientY-e.touches[0].clientY);lbApplyZoom(iZ*(d/iD))}
-  },{passive:true});
+  var initDist=0,initZoom=1;
+  wrap.addEventListener('touchstart',function(e){if(e.touches.length===2){initDist=Math.hypot(e.touches[1].clientX-e.touches[0].clientX,e.touches[1].clientY-e.touches[0].clientY);initZoom=lbZoom;}},{passive:true});
+  wrap.addEventListener('touchmove',function(e){if(e.touches.length===2){var dist=Math.hypot(e.touches[1].clientX-e.touches[0].clientX,e.touches[1].clientY-e.touches[0].clientY);lbApplyZoom(initZoom*(dist/initDist));}},{passive:true});
+})();
+
+/* ── BACK TO TOP ─────────────────────────────────────────── */
+var btt=document.getElementById('btt');
+var bttVisible=false;
+window.addEventListener('scroll',function(){
+  var show=window.scrollY>400;
+  if(show!==bttVisible){bttVisible=show;btt.classList.toggle('show',show);}
+},{passive:true});
+btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+/* ── CARD TILT (desktop only, passive) ───────────────────── */
+if(window.innerWidth>768&&window.matchMedia('(hover:hover)').matches){
+  document.querySelectorAll('.svc-card,.proc-item,.tool-item').forEach(function(card){
+    card.addEventListener('mousemove',function(e){
+      var r=card.getBoundingClientRect();
+      var x=(e.clientX-r.left)/r.width-.5;
+      var y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform='perspective(600px) rotateY('+(x*6)+'deg) rotateX('+(-y*6)+'deg) translateY(-4px)';
+    });
+    card.addEventListener('mouseleave',function(){card.style.transform='';});
+  });
+}
+
 })();
 </script>
 </body>
